@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Assembly Language End Example——The Date | LTF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="按中华民族的传统习惯，通常要在婴儿出生的百日举办庆祝仪式，因此需要推算一个婴儿出生后百日的日期，将该问题拓展，再分别推算一个人出生后“千日”和“万日”的日期。 例如：某人2018年5月3日出生，其百日为2018 年8月11日。 该程序实现的功能需要提示用户输入一个人的出生日期，据此计算并输出百日、千日和万日的日期。 输入、输出的日期格式须依照中国人的习惯，如2018-05-03。 提示：要考虑“">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Assembly Language End Example——The Date">
+<meta property="og:url" content="https://ltf.github.io/2018/05/13/assembly-language-end-example-the-date/index.html">
+<meta property="og:site_name" content="LTF">
+<meta property="og:description" content="按中华民族的传统习惯，通常要在婴儿出生的百日举办庆祝仪式，因此需要推算一个婴儿出生后百日的日期，将该问题拓展，再分别推算一个人出生后“千日”和“万日”的日期。 例如：某人2018年5月3日出生，其百日为2018 年8月11日。 该程序实现的功能需要提示用户输入一个人的出生日期，据此计算并输出百日、千日和万日的日期。 输入、输出的日期格式须依照中国人的习惯，如2018-05-03。 提示：要考虑“">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://blog.ltfnjust.club/wp-content/uploads/2018/05/百日.png">
+<meta property="og:image" content="http://blog.ltfnjust.club/wp-content/uploads/2018/05/千日.png">
+<meta property="og:image" content="http://blog.ltfnjust.club/wp-content/uploads/2018/05/万日.png">
+<meta property="og:updated_time" content="2019-01-29T09:52:14.558Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Assembly Language End Example——The Date">
+<meta name="twitter:description" content="按中华民族的传统习惯，通常要在婴儿出生的百日举办庆祝仪式，因此需要推算一个婴儿出生后百日的日期，将该问题拓展，再分别推算一个人出生后“千日”和“万日”的日期。 例如：某人2018年5月3日出生，其百日为2018 年8月11日。 该程序实现的功能需要提示用户输入一个人的出生日期，据此计算并输出百日、千日和万日的日期。 输入、输出的日期格式须依照中国人的习惯，如2018-05-03。 提示：要考虑“">
+<meta name="twitter:image" content="http://blog.ltfnjust.club/wp-content/uploads/2018/05/百日.png">
+  
+    <link rel="alternate" href="/atom.xml" title="LTF" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">LTF</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://ltf.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-assembly-language-end-example-the-date" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/05/13/assembly-language-end-example-the-date/" class="article-date">
+  <time datetime="2018-05-13T15:25:05.000Z" itemprop="datePublished">2018-05-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Einstein-Turing/">Einstein_Turing</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Assembly Language End Example——The Date
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<p>按中华民族的传统习惯，通常要在婴儿出生的百日举办庆祝仪式，因此需要推算一个婴儿出生后百日的日期，将该问题拓展，再分别推算一个人出生后“千日”和“万日”的日期。 例如：某人2018年5月3日出生，其百日为2018 年8月11日。 该程序实现的功能需要提示用户输入一个人的出生日期，据此计算并输出百日、千日和万日的日期。 输入、输出的日期格式须依照中国人的习惯，如2018-05-03。 提示：要考虑“闰年”； 汇编结课实验题，因为上课从未听讲在格式化输入输出上耗费大量时间，不过半个下午半个晚上也是肝完了，代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br></pre></td><td class="code"><pre><span class="line">assume cs:code,ss:stack,ds:data</span><br><span class="line"></span><br><span class="line">stack segment stack</span><br><span class="line">    db 1024 dup (0)</span><br><span class="line">stack ends</span><br><span class="line"></span><br><span class="line">data segment</span><br><span class="line">;存储年月日数据</span><br><span class="line">year    dw  ?</span><br><span class="line">month   db  ?</span><br><span class="line">day     db  ?</span><br><span class="line">buf db  10  dup (?);存储输入的字符串</span><br><span class="line">data ends</span><br><span class="line"></span><br><span class="line">code segment</span><br><span class="line">start:</span><br><span class="line">    mov ax,data</span><br><span class="line">    mov ds,ax</span><br><span class="line">    mov ax,0</span><br><span class="line">    ;从键盘输入字符串</span><br><span class="line">    lea di,buf;获取字符串首地址</span><br><span class="line">input:</span><br><span class="line">    ;逐个输入字符并存储</span><br><span class="line">    mov ah,1</span><br><span class="line">    int 21h</span><br><span class="line">    ;检测到换行时结束输入</span><br><span class="line">    cmp al,0dh</span><br><span class="line">    je inputend</span><br><span class="line">    mov ds:[di],al</span><br><span class="line">    inc di</span><br><span class="line">    jmp input</span><br><span class="line">inputend:</span><br><span class="line">    mov ds:[di],al</span><br><span class="line">    call change;将输入字符串转化为年份数字,并存入数据段</span><br><span class="line"></span><br><span class="line">    mov cx,100;入口参数，千日则1000，万日则10000</span><br><span class="line">    call calculate;计算N日后的日期,并储存</span><br><span class="line"></span><br><span class="line">    mov ax,ds:[year]</span><br><span class="line">    mov cx,4</span><br><span class="line">    ;输出并显示年份</span><br><span class="line">outputy:</span><br><span class="line">    mov dx,0</span><br><span class="line">    mov bx,10</span><br><span class="line">    div bx</span><br><span class="line">    add dl,30h</span><br><span class="line">    push dx</span><br><span class="line">    loop outputy</span><br><span class="line">    mov cx,4</span><br><span class="line">displayy:</span><br><span class="line">    ;逐个输出年份</span><br><span class="line">    pop dx</span><br><span class="line">    mov ah,2</span><br><span class="line">    int 21h</span><br><span class="line">    loop displayy</span><br><span class="line">    ;格式化输出日期中的&apos;-&apos;</span><br><span class="line">    mov dl,&apos;-&apos;</span><br><span class="line">    mov ah,2</span><br><span class="line">    int 21h</span><br><span class="line">    ;为月份的输出做准备</span><br><span class="line">    mov dx,0</span><br><span class="line">    mov al,ds:[month]</span><br><span class="line">    mov ah,0</span><br><span class="line">    ;输出并显示月份</span><br><span class="line">outputm:</span><br><span class="line">    ;逐个输出月份</span><br><span class="line">    mov bl,10</span><br><span class="line">    div bl</span><br><span class="line">    add al,30h</span><br><span class="line">    add ah,30h</span><br><span class="line">    mov bl,ah</span><br><span class="line"></span><br><span class="line">    mov dl,al</span><br><span class="line">    mov ah,2</span><br><span class="line">    int 21h</span><br><span class="line"></span><br><span class="line">    mov dl,bl</span><br><span class="line">    mov ah,2</span><br><span class="line">    int 21h</span><br><span class="line">    ;格式化输出日期中的&apos;-&apos;</span><br><span class="line">    mov dl,&apos;-&apos;</span><br><span class="line">    mov ah,2</span><br><span class="line">    int 21h</span><br><span class="line">    ;为日期的输出做准备</span><br><span class="line">    mov dx,0</span><br><span class="line">    mov al,ds:[day]</span><br><span class="line">    mov ah,0</span><br><span class="line">    ;输出并显示日期</span><br><span class="line">outputd:</span><br><span class="line">    ;逐个输出日期</span><br><span class="line">    mov bl,10</span><br><span class="line">    div bl</span><br><span class="line">    add al,30h</span><br><span class="line">    add ah,30h</span><br><span class="line">    mov bl,ah</span><br><span class="line"></span><br><span class="line">    mov dl,al</span><br><span class="line">    mov ah,2</span><br><span class="line">    int 21h</span><br><span class="line"></span><br><span class="line">    mov dl,bl</span><br><span class="line">    mov ah,2</span><br><span class="line">    int 21h</span><br><span class="line">    ;程序返回</span><br><span class="line">    mov ax,4c00h</span><br><span class="line">    int 21h</span><br><span class="line">change proc near;子程序，将输入字符串转化为年份数字，并存入数据段</span><br><span class="line">    ;保护数据</span><br><span class="line">    push ax</span><br><span class="line">    push bx</span><br><span class="line">    push cx</span><br><span class="line">    push dx</span><br><span class="line"></span><br><span class="line">    mov dx,0</span><br><span class="line">    mov bx,0</span><br><span class="line"></span><br><span class="line">    lea si,buf;获取字符串首地址</span><br><span class="line">    mov bl,10;每次进位乘10</span><br><span class="line">    mov ax,0;初始值</span><br><span class="line">s1:</span><br><span class="line">    ;第一次读到-时存入年，跳转到月</span><br><span class="line">    cmp byte ptr ds:[si],&apos;-&apos;</span><br><span class="line">    je themonth</span><br><span class="line"></span><br><span class="line">    sub byte ptr ds:[si],30h;字符转换为数字</span><br><span class="line">    ;逐个取字符并换算成相应数值</span><br><span class="line">    mov dl,byte ptr ds:[si]</span><br><span class="line">    add ax,dx</span><br><span class="line">    mov bh,0</span><br><span class="line">    mul bx</span><br><span class="line">    inc si</span><br><span class="line">    jmp s1</span><br><span class="line">themonth:</span><br><span class="line">    mov dx,0</span><br><span class="line">    div bx</span><br><span class="line">    mov ds:[year],ax</span><br><span class="line">    inc si</span><br><span class="line">    mov ax,0</span><br><span class="line">s2:</span><br><span class="line">    ;第二次读到-时存入月，跳转到日</span><br><span class="line">    cmp byte ptr ds:[si],&apos;-&apos;</span><br><span class="line">    je theday</span><br><span class="line"></span><br><span class="line">    sub byte ptr ds:[si],30h</span><br><span class="line">    add al,byte ptr ds:[si]</span><br><span class="line">    mov bh,0</span><br><span class="line">    mul bx</span><br><span class="line">    inc si</span><br><span class="line">    jmp s2</span><br><span class="line">theday:</span><br><span class="line">    mov dx,0</span><br><span class="line">    div bx</span><br><span class="line">    mov ds:[month],al</span><br><span class="line">    inc si</span><br><span class="line">    mov ax,0</span><br><span class="line">s3:</span><br><span class="line">    ;检测到换行则结束</span><br><span class="line">    cmp byte ptr ds:[si],0dh</span><br><span class="line">    je endchange</span><br><span class="line"></span><br><span class="line">    sub byte ptr ds:[si],30h</span><br><span class="line">    add al,byte ptr ds:[si]</span><br><span class="line">    mov bh,0</span><br><span class="line">    mul bx</span><br><span class="line">    inc si</span><br><span class="line">    jmp s3</span><br><span class="line">endchange:</span><br><span class="line">    mov dx,0</span><br><span class="line">    div bx</span><br><span class="line">    mov ds:[day],al</span><br><span class="line"></span><br><span class="line">    ;恢复数据</span><br><span class="line">    pop dx</span><br><span class="line">    pop cx</span><br><span class="line">    pop bx</span><br><span class="line">    pop ax</span><br><span class="line">change endp</span><br><span class="line"></span><br><span class="line">boolrun proc near;子程序，判断是否为闰年，并设置CF位</span><br><span class="line"></span><br><span class="line">    ;保护数据</span><br><span class="line">    push bx</span><br><span class="line">    push cx</span><br><span class="line">    push dx</span><br><span class="line"></span><br><span class="line">    ;年份作被除数，判断能否被100整除</span><br><span class="line">    mov ax,ds:[year]</span><br><span class="line">    mov cx,ax;备份年份</span><br><span class="line">    mov dx,0;dx清零</span><br><span class="line">    mov bx,100</span><br><span class="line">    div bx</span><br><span class="line">    cmp dx,0</span><br><span class="line"></span><br><span class="line">    jne label1;不能整除，则跳转判断能否被4整除</span><br><span class="line"></span><br><span class="line">    ;能整除，则判断能否被400整除</span><br><span class="line">    mov ax,cx</span><br><span class="line">    mov bx,400</span><br><span class="line">    div bx</span><br><span class="line">    cmp dx,0</span><br><span class="line"></span><br><span class="line">    je label2;是闰年，跳转到label2</span><br><span class="line">    mov al,0;否则将al清零</span><br><span class="line">    jmp label3</span><br><span class="line">label1:</span><br><span class="line">    ;判断能否被4整除</span><br><span class="line">    mov ax,cx</span><br><span class="line">    mov dx,0</span><br><span class="line">    mov bx,4</span><br><span class="line">    div bx</span><br><span class="line">    cmp dx,0</span><br><span class="line">    je label2;是闰年</span><br><span class="line">    mov al,0</span><br><span class="line">    jmp label3</span><br><span class="line">label2:</span><br><span class="line">    mov al,1;是闰年则al置1</span><br><span class="line">label3:</span><br><span class="line">    pop dx</span><br><span class="line">    pop cx</span><br><span class="line">    pop bx</span><br><span class="line">    ret</span><br><span class="line">boolrun endp</span><br><span class="line"></span><br><span class="line">calculate proc near</span><br><span class="line">    push ax</span><br><span class="line">    push bx</span><br><span class="line">    push cx</span><br><span class="line">    push dx</span><br><span class="line">loop1:</span><br><span class="line">    call boolrun;判断是否为闰年</span><br><span class="line">    cmp ds:[month],1</span><br><span class="line">    je m1</span><br><span class="line">    cmp ds:[month],2</span><br><span class="line">    je m2</span><br><span class="line">    cmp ds:[month],3</span><br><span class="line">    je m1</span><br><span class="line">    cmp ds:[month],4</span><br><span class="line">    je m3</span><br><span class="line">    cmp ds:[month],5</span><br><span class="line">    je m1</span><br><span class="line">    cmp ds:[month],6</span><br><span class="line">    je m3</span><br><span class="line">    cmp ds:[month],7</span><br><span class="line">    je m1</span><br><span class="line">    cmp ds:[month],8</span><br><span class="line">    je m1</span><br><span class="line">    cmp ds:[month],9</span><br><span class="line">    je m3</span><br><span class="line">    cmp ds:[month],10</span><br><span class="line">    je m1</span><br><span class="line">    cmp ds:[month],11</span><br><span class="line">    je m3</span><br><span class="line">    cmp ds:[month],12</span><br><span class="line">    je m4</span><br><span class="line">    ;月份为大月，执行此项</span><br><span class="line">m1:</span><br><span class="line">    cmp ds:[day],31</span><br><span class="line">    je dayend</span><br><span class="line">    jmp dayup</span><br><span class="line">    ;月份为特殊的二月，执行此项</span><br><span class="line">m2:</span><br><span class="line">    cmp al,0</span><br><span class="line">    je norun</span><br><span class="line">    cmp ds:[day],29</span><br><span class="line">    je dayend</span><br><span class="line">    jmp dayup</span><br><span class="line">    ;闰年</span><br><span class="line">norun:</span><br><span class="line">    cmp ds:[day],28</span><br><span class="line">    je dayend</span><br><span class="line">    jmp dayup</span><br><span class="line">    ;月份为小月，执行此项</span><br><span class="line">m3: cmp ds:[day],30</span><br><span class="line">    je dayend</span><br><span class="line">    jmp dayup</span><br><span class="line">    ;月份为特殊的12月，执行此项</span><br><span class="line">m4:</span><br><span class="line">    cmp ds:[day],31</span><br><span class="line">    je yearend</span><br><span class="line">    jmp dayup</span><br><span class="line">    ;年末</span><br><span class="line">yearend:</span><br><span class="line">    inc ds:[year]</span><br><span class="line">    mov ds:[month],1</span><br><span class="line">    mov ds:[day],1</span><br><span class="line">    sub cx,1</span><br><span class="line">    jnz loop1</span><br><span class="line">    jmp endofm</span><br><span class="line">    ;月末</span><br><span class="line">dayend:</span><br><span class="line">    inc ds:[month]</span><br><span class="line">    mov ds:[day],1</span><br><span class="line">    sub cx,1</span><br><span class="line">    jnz loop1</span><br><span class="line">    jmp endofm</span><br><span class="line">    ;日常</span><br><span class="line">dayup:</span><br><span class="line">    inc ds:[day]</span><br><span class="line">    sub cx,1</span><br><span class="line">    jnz loop1</span><br><span class="line">    jmp endofm</span><br><span class="line">endofm:</span><br><span class="line">    pop dx</span><br><span class="line">    pop cx</span><br><span class="line">    pop bx</span><br><span class="line">    pop ax</span><br><span class="line">    ret</span><br><span class="line">calculate endp</span><br><span class="line">code ends</span><br><span class="line"></span><br><span class="line">end start</span><br></pre></td></tr></table></figure>
+<p>以下为百日，千日，万日，的程序运行结果： <img src="http://blog.ltfnjust.club/wp-content/uploads/2018/05/百日.png" alt=""><img src="http://blog.ltfnjust.club/wp-content/uploads/2018/05/千日.png" alt=""><img src="http://blog.ltfnjust.club/wp-content/uploads/2018/05/万日.png" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ltf.github.io/2018/05/13/assembly-language-end-example-the-date/" data-id="cjrhlnloz00044gu2ci524ks6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/05/21/win10-e4-b8-8b-e7-9a-84linux-e5-ad-90-e7-b3-bb-e7-bb-9fkali-e7-9a-84-e5-ae-89-e8-a3-85-e5-8f-8a-e9-85-8d-e7-bd-ae/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          win10下的linux子系统(kali)的安装及配置
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/05/06/assembly-lanuage-example-9/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Assembly Language example 9</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Einstein-Turing/">Einstein_Turing</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/LTF/">LTF</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LTF/XLor/">XLor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/LTF/漏断/">漏断</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/LordCasser/">LordCasser</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LordCasser/LTF/">LTF</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/environments/">environments</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/">kali</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习打卡/">学习打卡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文件上传检测绕过/">文件上传检测绕过</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站渗透/">网站渗透</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/记录/">记录</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CTF/" style="font-size: 10px;">CTF</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/environments/" style="font-size: 15px;">environments</a> <a href="/tags/kali/" style="font-size: 10px;">kali</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/学习打卡/" style="font-size: 15px;">学习打卡</a> <a href="/tags/文件上传检测绕过/" style="font-size: 10px;">文件上传检测绕过</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/网站渗透/" style="font-size: 10px;">网站渗透</a> <a href="/tags/记录/" style="font-size: 10px;">记录</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/26/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/08/shell-made-of-symbols/">纯符号shell的学习</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/01/406/">Note of Unreal Engine 4</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/21/win10-e4-b8-8b-e7-9a-84linux-e5-ad-90-e7-b3-bb-e7-bb-9fkali-e7-9a-84-e5-ae-89-e8-a3-85-e5-8f-8a-e9-85-8d-e7-bd-ae/">win10下的linux子系统(kali)的安装及配置</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/13/assembly-language-end-example-the-date/">Assembly Language End Example——The Date</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 LTF<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

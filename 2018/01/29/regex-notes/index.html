@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>正则补充 | LTF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="之前PHP笔记里的正则表达式部分略有不足（致命缺陷[滑稽]），在此进行一些补充，分为19点，当做备忘。主要来源于《正则表达式30分钟入门教程》，可以到http://deerchao.net/tutorials/regex/regex.htm查阅详细内容。  \b匹配这样的位置：它的前一个字符和后一个字符不全是(一个是,一个不是或不存在)\w \d匹配一个数字 \w匹配字母或数字或汉字或下划线 {">
+<meta name="keywords" content="学习打卡">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则补充">
+<meta property="og:url" content="https://ltf.github.io/2018/01/29/regex-notes/index.html">
+<meta property="og:site_name" content="LTF">
+<meta property="og:description" content="之前PHP笔记里的正则表达式部分略有不足（致命缺陷[滑稽]），在此进行一些补充，分为19点，当做备忘。主要来源于《正则表达式30分钟入门教程》，可以到http://deerchao.net/tutorials/regex/regex.htm查阅详细内容。  \b匹配这样的位置：它的前一个字符和后一个字符不全是(一个是,一个不是或不存在)\w \d匹配一个数字 \w匹配字母或数字或汉字或下划线 {">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-29T09:54:18.534Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="正则补充">
+<meta name="twitter:description" content="之前PHP笔记里的正则表达式部分略有不足（致命缺陷[滑稽]），在此进行一些补充，分为19点，当做备忘。主要来源于《正则表达式30分钟入门教程》，可以到http://deerchao.net/tutorials/regex/regex.htm查阅详细内容。  \b匹配这样的位置：它的前一个字符和后一个字符不全是(一个是,一个不是或不存在)\w \d匹配一个数字 \w匹配字母或数字或汉字或下划线 {">
+  
+    <link rel="alternate" href="/atom.xml" title="LTF" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">LTF</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://ltf.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-regex-notes" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/01/29/regex-notes/" class="article-date">
+  <time datetime="2018-01-29T06:42:43.000Z" itemprop="datePublished">2018-01-29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LTF/">LTF</a>►<a class="article-category-link" href="/categories/LTF/漏断/">漏断</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      正则补充
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<p>之前PHP笔记里的正则表达式部分略有不足（致命缺陷[滑稽]），在此进行一些补充，分为19点，当做备忘。主要来源于<a href="http://deerchao.net/tutorials/regex/regex.htm" target="_blank" rel="noopener">《正则表达式30分钟入门教程》</a>，可以到<a href="http://deerchao.net/tutorials/regex/regex.htm" target="_blank" rel="noopener">http://deerchao.net/tutorials/regex/regex.htm</a>查阅详细内容。<br><!--more--></p>
+<ol>
+<li>\b匹配这样的位置：它的前一个字符和后一个字符不全是(一个是,一个不是或不存在)\w</li>
+<li>\d匹配一个数字</li>
+<li>\w匹配字母或数字或汉字或下划线</li>
+<li>{n,}重复n次或更多。{n,m}重复n到m次</li>
+<li>分支条件|，注意各条件顺序。匹配分枝条件时，将会从左到右地测试每个条件，如果满足了某个分枝的话，就不会去再管其它的条件了。所以要把匹配较长、成立难度大的放在前面。如：\d{5}|\d{5}-\d{4}只会匹配前五个数字。</li>
+<li>反义。大写与小写反义，如\b与\B,\w与\W。另：[^x]匹配除x以外的任意字符[^dsafl]匹配除dsafl外的任意字符。例：&lt;a[^&gt;]+&gt;匹配用尖括号括起来的以a开头的字符串。</li>
+<li>向后引用。每个分组（）会自动分配组号，0表示整个表达式，1表示第一个（），以此类推。例：\b(\w+)\b\s+\1\b可匹配重复的单词。</li>
+<li>指定表达式组名。语法：(?<word>\w+)或(?‘Word’\w+)，反向引用这个分组捕获的内容，可用\k<word>。例：\b(?<word>\w+)\b\s+\k<word>\b可匹配重复的单词。</word></word></word></word></li>
+<li>（?:exp)匹配，但不捕获，也不分配组号。(?#comment)注释，不产生任何影响。</li>
+<li>零宽度正预测先行断言：（？=exp)断言自身出现的位置的后面能匹配表达式exp。例：\b\w+(?=ing\b)，匹配以ing结尾的单词的前面部分(除了ing以外的部分)。</li>
+<li>零宽度正回顾后发断言：（?&lt;=exp)断言自身出现的位置的前面能匹配表达式exp。例：(?&lt;=\bre)\w+\b会匹配以re开头的单词的后半部分(除了re以外的部分)。</li>
+<li>注意：零宽断言只匹配一个位置，不消费任何字符！假如你想要给一个很长的数字中每三位间加一个逗号(当然是从右边加起了)，你可以这样查找需要在前面和里面添加逗号的部分：((?&lt;=\d)\d{3})+\b，用它对1234567890进行查找时结果是234567890。</li>
+<li>零宽度负预测先行断言：（?!exp)断言此位置的后面不能匹配表达式exp。例：\d{3}(?!\d)匹配三位数字，而且这三位数字的后面不能是数字。</li>
+<li>零宽度负回顾后发断言：（?&lt;!exp)断言此位置的前面不能匹配表达式exp。例：(?&lt;![a-z])\d{7}匹配前面不是小写字母的七位数字。</li>
+<li>一个更能体现零宽断言真正用途的例子：(?&lt;=&lt;(\w+)&gt;).*(?=&lt;\/\1&gt;)匹配不包含属性的简单HTML标签内里的内容。(?&lt;=&lt;(\w+)&gt;)指定了这样的前缀：被尖括号括起来的单词(比如可能是<b>)，然后是.*(任意的字符串),最后是一个后缀(?=&lt;\/\1&gt;)。注意后缀里的\/，它用到了前面提过的字符转义；\1则是一个反向引用，引用的正是捕获的第一组，前面的(\w+)匹配的内容，这样如果前缀实际上是<b>的话，后缀就是</b>了。整个表达式匹配的是<b>和</b>之间的内容(再次提醒，不包括前缀和后缀本身)。</b></li>
+<li>零宽断言的个人总结：“零宽”表示只匹配位置，不消费字符；“正”表示存在，用“=”，“负”表示不存在用“！”；“预测先行”看后面，“回顾后发”看前面，用”&lt;”。</li>
+<li>默认贪婪匹配。在次数标识符后面加“？”表示懒惰匹配。贪婪匹配尽量多的字符，懒惰匹配尽量少</li>
+<li>注意：最先开始的匹配拥有最高的优先权——The match that begins earliest wins。此原则高于贪婪/懒惰规则。</li>
+<li>关于平衡组和递归匹配，只能勉强看懂，根本不会用，放一个例子就溜了。例：匹配嵌套的<div>标签：&lt;div[^&gt;]*&gt;[^&lt;&gt;]*(((?’Open’&lt;div[^&gt;]*&gt;)[^&lt;&gt;]*)+((?’-Open’</div>)[^&lt;&gt;]*)+)*(?(Open)(?!))。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ltf.github.io/2018/01/29/regex-notes/" data-id="cjrhlnlqn00204gu2bh2smzik" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习打卡/">学习打卡</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/01/29/vmware-workstation-pro12kali2017-3-e5-ae-89-e8-a3-85-e8-ae-b0-e5-bd-95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          VMware Workstation Pro12+Kali2017.3安装记录
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/28/othello-uva220/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Othello UVa220</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Einstein-Turing/">Einstein_Turing</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/LTF/">LTF</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LTF/XLor/">XLor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/LTF/漏断/">漏断</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/LordCasser/">LordCasser</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LordCasser/LTF/">LTF</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/environments/">environments</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/">kali</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习打卡/">学习打卡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文件上传检测绕过/">文件上传检测绕过</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站渗透/">网站渗透</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/记录/">记录</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CTF/" style="font-size: 10px;">CTF</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/environments/" style="font-size: 15px;">environments</a> <a href="/tags/kali/" style="font-size: 10px;">kali</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/学习打卡/" style="font-size: 15px;">学习打卡</a> <a href="/tags/文件上传检测绕过/" style="font-size: 10px;">文件上传检测绕过</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/网站渗透/" style="font-size: 10px;">网站渗透</a> <a href="/tags/记录/" style="font-size: 10px;">记录</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/26/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/08/shell-made-of-symbols/">纯符号shell的学习</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/01/406/">Note of Unreal Engine 4</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/21/win10-e4-b8-8b-e7-9a-84linux-e5-ad-90-e7-b3-bb-e7-bb-9fkali-e7-9a-84-e5-ae-89-e8-a3-85-e5-8f-8a-e9-85-8d-e7-bd-ae/">win10下的linux子系统(kali)的安装及配置</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/13/assembly-language-end-example-the-date/">Assembly Language End Example——The Date</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 LTF<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

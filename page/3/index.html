@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>LTF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="LTF">
+<meta property="og:url" content="https://ltf.github.io/page/3/index.html">
+<meta property="og:site_name" content="LTF">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LTF">
+  
+    <link rel="alternate" href="/atom.xml" title="LTF" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">LTF</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://ltf.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-sagheer-and-nubian-market" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/09/sagheer-and-nubian-market/" class="article-date">
+  <time datetime="2018-02-09T09:25:53.000Z" itemprop="datePublished">2018-02-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LTF/">LTF</a>►<a class="article-category-link" href="/categories/LTF/XLor/">XLor</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/09/sagheer-and-nubian-market/">Sagheer and Nubian Market</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<p>本题不使用二分查找必然TLE。 注意<strong>二分查找</strong>的使用！<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> pri[<span class="number">100005</span>], now[<span class="number">100005</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> n, mon;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; mon;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; pri[i];</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> l = <span class="number">1</span>, h = n, res = <span class="number">0</span>, s = <span class="number">0</span>, mid;</span><br><span class="line">	<span class="keyword">while</span> (l &lt;= h)</span><br><span class="line">	&#123;</span><br><span class="line">		mid = (l + h) / <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span>  sum = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			now[j] = pri[j] + (j + <span class="number">1</span>) * mid;</span><br><span class="line">		&#125;</span><br><span class="line">		sort(now, now + n);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; mid; sum += now[j++]);</span><br><span class="line">		<span class="keyword">if</span> (sum &lt;= mon)</span><br><span class="line">		&#123;</span><br><span class="line">			res = mid;</span><br><span class="line">			s = sum;</span><br><span class="line">			l = mid + <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			h = mid - <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; res &lt;&lt; <span class="string">' '</span> &lt;&lt; s &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ltf.github.io/2018/02/09/sagheer-and-nubian-market/" data-id="cjrhlnlqr00274gu2ldnblb1u" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-sagheer-and-crossroads" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/09/sagheer-and-crossroads/" class="article-date">
+  <time datetime="2018-02-09T09:23:52.000Z" itemprop="datePublished">2018-02-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LTF/">LTF</a>►<a class="article-category-link" href="/categories/LTF/XLor/">XLor</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/09/sagheer-and-crossroads/">Sagheer and Crossroads</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<p>我以为一次要输入很多组样例，然后读取EOF终止，结果读一个就行了。。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> l[<span class="number">4</span>], s[<span class="number">4</span>], r[<span class="number">4</span>], p[<span class="number">4</span>];</span><br><span class="line">	<span class="keyword">int</span> flag = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; l[i] &gt;&gt; s[i] &gt;&gt; r[i] &gt;&gt; p[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (p[i] &amp;&amp; (l[(i + <span class="number">1</span>) % <span class="number">4</span>] || s[(i + <span class="number">2</span>) % <span class="number">4</span>] || r[(i + <span class="number">3</span>) % <span class="number">4</span>] || l[i] || r[i] || s[i]))</span><br><span class="line">			flag = <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; (flag ? <span class="string">"NO"</span> : <span class="string">"YES"</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ltf.github.io/2018/02/09/sagheer-and-crossroads/" data-id="cjrhlnlqp00244gu28scpy8f3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-throwing-cards-away-uva10935" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/06/throwing-cards-away-uva10935/" class="article-date">
+  <time datetime="2018-02-06T07:34:44.000Z" itemprop="datePublished">2018-02-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LTF/">LTF</a>►<a class="article-category-link" href="/categories/LTF/XLor/">XLor</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/06/throwing-cards-away-uva10935/">Throwing cards away UVa10935</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<p>水题，输出的 <strong>remaining</strong> 巧妙地打错了导致wa。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; deck;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; n &amp;&amp; n)</span><br><span class="line">	&#123;</span><br><span class="line">		deck.clear();</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; i++)</span><br><span class="line">			deck.push_back(i);</span><br><span class="line">		<span class="keyword">int</span> tot = <span class="number">1</span>, kase = <span class="number">0</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"Discarded cards:"</span>;</span><br><span class="line">		<span class="keyword">while</span> (tot &lt; n)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (kase++) </span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="string">","</span>;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">' '</span> &lt;&lt; deck[tot];</span><br><span class="line">			tot++;</span><br><span class="line">			deck.push_back(deck[tot++]);</span><br><span class="line">			n++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span> &lt;&lt; <span class="string">"Remaining card: "</span> &lt;&lt; deck[tot] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ltf.github.io/2018/02/06/throwing-cards-away-uva10935/" data-id="cjrhlnlr3002m4gu2g4afzxti" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ducci-sequence-uva1594" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/06/ducci-sequence-uva1594/" class="article-date">
+  <time datetime="2018-02-06T07:33:17.000Z" itemprop="datePublished">2018-02-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LTF/">LTF</a>►<a class="article-category-link" href="/categories/LTF/XLor/">XLor</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/06/ducci-sequence-uva1594/">Ducci Sequence UVa1594</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; seq, seq2;</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;, <span class="keyword">int</span>&gt; check;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> T;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span> (T--)</span><br><span class="line">	&#123;</span><br><span class="line">		check.clear();</span><br><span class="line">		seq.clear();</span><br><span class="line">		<span class="keyword">int</span> n;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">		<span class="keyword">while</span> (n--)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> x;</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">			seq.push_back(x);</span><br><span class="line">		&#125;</span><br><span class="line">		check[seq] = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; seq.size(); i++)</span><br><span class="line">				seq2.push_back(<span class="built_in">abs</span>(seq[i] - seq[i - <span class="number">1</span>]));</span><br><span class="line">			seq2.push_back(<span class="built_in">abs</span>(seq[seq.size() - <span class="number">1</span>] - seq[<span class="number">0</span>]));</span><br><span class="line">			seq = seq2;</span><br><span class="line">			seq2.clear();</span><br><span class="line">			<span class="keyword">int</span> flag = <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; seq.size(); i++)</span><br><span class="line">				<span class="keyword">if</span> (seq[i] != <span class="number">0</span>)</span><br><span class="line">					flag = <span class="number">0</span>;</span><br><span class="line">			<span class="keyword">if</span> (flag)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="string">"ZERO"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">				<span class="keyword">goto</span> ends;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (check.count(seq))</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">cout</span> &lt;&lt; <span class="string">"LOOP"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">				<span class="keyword">goto</span> ends;</span><br><span class="line">			&#125;</span><br><span class="line">			check[seq] = <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	ends: ;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ltf.github.io/2018/02/06/ducci-sequence-uva1594/" data-id="cjrhlnlpb000c4gu20ihg7a4c" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-php-e6-96-87-e4-bb-b6-e5-92-8c-e7-9b-ae-e5-bd-95-e7-ac-94-e8-ae-b0-e8-a1-a5-e5-85-85" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/06/php-e6-96-87-e4-bb-b6-e5-92-8c-e7-9b-ae-e5-bd-95-e7-ac-94-e8-ae-b0-e8-a1-a5-e5-85-85/" class="article-date">
+  <time datetime="2018-02-05T16:35:32.000Z" itemprop="datePublished">2018-02-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LTF/">LTF</a>►<a class="article-category-link" href="/categories/LTF/漏断/">漏断</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/06/php-e6-96-87-e4-bb-b6-e5-92-8c-e7-9b-ae-e5-bd-95-e7-ac-94-e8-ae-b0-e8-a1-a5-e5-85-85/">PHP文件和目录 笔记补充</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<p>笔记补充。 </p>
+<ol>
+<li>打开文件</li>
+</ol>
+<p>语法：fopen(文件名或url，打开模式）</p>
+<p>打开模式：</p>
+<p>只读 r 以只读方式打开文件，指针指向文件头</p>
+<p>读写 r+ 以读写方式打开文件，指针指向文件头</p>
+<p>写入 w 以写入方式打开文件，指针指向文件头，若文件存在则清空，若不存在则尝试创建</p>
+<p>读写 w+ 以读写方式打开文件，指针指向文件头，若文件存在则清空，若不存在则尝试创建</p>
+<p>添加 a 以写入方式打开文件，指针指向文件尾，若不存在则尝试创建</p>
+<p>添加 a+ 以读写方式打开文件，指针指向文件尾，若不存在则尝试创建</p>
+<p>谨慎写入 x 以写入方式打开文件，指针指向文件头，若文件存在则返回false并警告</p>
+<p>谨慎写入 x+ 以写入方式打开文件，指针指向文件头，若文件存在则返回false并警告</p>
+<p>创建并写入 c 以写入方式打开文件，指针指向文件头，即使文件存在也不会失败或清空</p>
+<p>创建并读写 c+ 以读写方式打开文件，指针指向文件头，即使文件存在也不会失败或清空</p>
+<ol start="2">
+<li>检查文件末尾</li>
+</ol>
+<p>语法：feof(文件指针）</p>
+<p>如果文件指针到了EOF（end of file）或出错就返回true，否则返回一个错误（包括socket超时），其他情况返回false</p>
+<p>例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$file = fopen(&apos;new.txt&apos;,&apos;r&apos;);</span><br><span class="line">if( feof($file) )</span><br><span class="line">&#123;</span><br><span class="line">echo &apos;文件指针在结束位置了&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ol start="3">
+<li>读取文件</li>
+</ol>
+<p>语法：fread（文件指针，读取长度）</p>
+<p>返回读取的字符串，若出错则返回false</p>
+<p>如果读取长度比指定长度短（遇到EOF）则自动停止，返回读取的字符串</p>
+<ol start="4">
+<li>关闭文件</li>
+</ol>
+<p>语法：fclose(文件指针）</p>
+<p>执行成功返回true，否则返回false</p>
+<p>将文件读入字符串</p>
+<p>语法：file_get_contents(文件名)</p>
+<p>成功则返回文件内容，失败则返回false</p>
+<ol start="5">
+<li>字符串写入文件</li>
+</ol>
+<p>语法：file_put_contents(写入文件，要写入数据，打开/写入文件方式)</p>
+<p>若写入文件不存在，则创建一个新文件。</p>
+<p>打开/写入文件方式（可选参数）：FILE_USE_INCLUDE_PATH 在include_path目录搜索要输入的文件名</p>
+<p>FILE_APPEND 若文件已存在，则追加而非覆盖</p>
+<p>LOCK_EX 在写入时获得一个独占锁</p>
+<ol start="6">
+<li>将整个文件读入数组</li>
+</ol>
+<p>语法：file（文件名，读取参数）</p>
+<p>成功则返回数组，元素以换行键分隔，失败则返回false</p>
+<p>读取参数：FILE_USE_INCLUDE_PATH 在include_path中查找文件</p>
+<p>FILE_IGNOE_NEW_LINES 每个元素末尾不添加换行符</p>
+<p>FILE_SKIP_EMPTY_LINES 跳过空行</p>
+<p>无需打开/读取/关闭文件就可以读取整个文件，但会大量占用系统内存</p>
+<ol start="7">
+<li>复制文件</li>
+</ol>
+<p>语法：copy(源文件，目标文件)</p>
+<p>成功返回true，失败返回false</p>
+<p>注意：若文件已存在，则完全覆盖！</p>
+<ol start="8">
+<li>删除文件</li>
+</ol>
+<p>语法：unlink(文件名）</p>
+<p>成功返回true，失败返回false</p>
+<ol start="9">
+<li>检查文件是否正常</li>
+</ol>
+<p>语法： is_file（文件名）</p>
+<p>存在且正常则返回true，否则返回false</p>
+<p>is_file只检查文件，而file_exists既检查文件也检查目录</p>
+<ol start="10">
+<li>返回文件信息</li>
+</ol>
+<p>语法：stat（文件名）</p>
+<p>成功则返回包含文件信息的数组，否则返回false</p>
+<ol start="11">
+<li>打开目录</li>
+</ol>
+<p>语法：opendir(目录）</p>
+<p>成功返回目录句柄，否则返回false</p>
+<p>若目录路径不合法或没有权限，返回false及一条错误信息，若要隐藏则在opendir（）前加@</p>
+<ol start="12">
+<li>关闭目录</li>
+</ol>
+<p>语法：closedir(目录句柄)</p>
+<p>若句柄未指定，系统默认为opendir打开的最后一个句柄</p>
+<ol start="13">
+<li>读取目录</li>
+</ol>
+<p>语法：readdir（目录句柄）</p>
+<p>例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$dir = opendir(&apos;.&apos;);</span><br><span class="line">while( $file = read($dir))</span><br><span class="line">&#123;</span><br><span class="line">if(if_fie($file))</span><br><span class="line">&#123;</span><br><span class="line">ehco &quot;文件：$file\n&quot;;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+<ol start="14">
+<li>创建目录</li>
+</ol>
+<p>语法：mkdir（目录名，目录模式，是否创建父目录）</p>
+<p>成功返回true，失败返回false</p>
+<p>目录模式：在非Windows系统上默认值0777（八进制表示的整数），Windows系统无效。</p>
+<p>是否创建父目录：true则可以用来建立，false不建立</p>
+<ol start="15">
+<li>删除目录</li>
+</ol>
+<p>语法：rmdir（目录名称）</p>
+<p>成功返回true，失败返回false</p>
+<p>注意：目录必须是空的，而且有权限，否则产生E_WARNING级别的错误</p>
+<ol start="16">
+<li>重命名文件或目录</li>
+</ol>
+<p>语法：rename（旧文件名，新文件名）</p>
+<p>成功返回true，失败返回false</p>
+<ol start="17">
+<li>检查文件或目录是否存在</li>
+</ol>
+<p>语法：file_exists(检查目录或文件名)</p>
+<p>目录或文件存在则返回true，否则返回false</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ltf.github.io/2018/02/06/php-e6-96-87-e4-bb-b6-e5-92-8c-e7-9b-ae-e5-bd-95-e7-ac-94-e8-ae-b0-e8-a1-a5-e5-85-85/" data-id="cjrhlnlq100134gu20n0jdhwo" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习打卡/">学习打卡</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-alignment-of-code-uva1593" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/05/alignment-of-code-uva1593/" class="article-date">
+  <time datetime="2018-02-05T09:54:34.000Z" itemprop="datePublished">2018-02-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LTF/">LTF</a>►<a class="article-category-link" href="/categories/LTF/XLor/">XLor</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/05/alignment-of-code-uva1593/">Alignment of Code UVa1593</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<p>水题，注意stringstream和vector的使用。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&gt; code;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; line;</span><br><span class="line"><span class="keyword">int</span> maxLen[<span class="number">200</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">string</span> str, s;</span><br><span class="line">	<span class="keyword">while</span> (getline(<span class="built_in">cin</span>, s))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="function"><span class="built_in">stringstream</span> <span class="title">ss</span><span class="params">(s)</span></span>;</span><br><span class="line">		<span class="keyword">while</span> (ss &gt;&gt; str)</span><br><span class="line">			line.push_back(str);</span><br><span class="line">		code.push_back(line);</span><br><span class="line">		line.clear();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">200</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; code.size(); j++)</span><br><span class="line">			<span class="keyword">if</span> (i &lt; code[j].size() &amp;&amp; code[j][i].size() &gt; maxLen[i])</span><br><span class="line">				maxLen[i] = code[j][i].size();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; code.size(); i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; code[i].size(); j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; code[i][j];</span><br><span class="line">			<span class="keyword">if</span> (j &lt; code[i].size() - <span class="number">1</span>)</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> k = code[i][j].size(); k &lt; maxLen[j] + <span class="number">1</span>; k++)</span><br><span class="line">					<span class="built_in">cout</span> &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ltf.github.io/2018/02/05/alignment-of-code-uva1593/" data-id="cjrhlnlox00034gu2jxg6sco9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-database-uva1592" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/05/database-uva1592/" class="article-date">
+  <time datetime="2018-02-05T09:52:27.000Z" itemprop="datePublished">2018-02-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LTF/">LTF</a>►<a class="article-category-link" href="/categories/LTF/XLor/">XLor</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/05/database-uva1592/">Database UVa1592</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<p>本题很迷，并不知道错在哪，以下给出AC代码。 去掉memset后wa，我写的输入数据库，使用getline()函数，并用‘,’作为分隔符，提交WA。 不做以上修改仍然可过udebug，很迷，搞不懂。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="built_in">string</span>, <span class="keyword">int</span>&gt; ID;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt; getStr;</span><br><span class="line"><span class="comment">//int table[10010][15];</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; table[<span class="number">10010</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getID</span><span class="params">(<span class="built_in">string</span>&amp; x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (ID.count(x))</span><br><span class="line">		<span class="keyword">return</span> ID[x];</span><br><span class="line">	getStr.push_back(x);</span><br><span class="line">	<span class="keyword">return</span> ID[x] = getStr.size() - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">point</span> &#123;</span> </span><br><span class="line">	<span class="keyword">int</span> x; <span class="keyword">int</span> y; </span><br><span class="line">	point(<span class="keyword">int</span> x1, <span class="keyword">int</span> x2) :x(x1), y(x2) &#123;&#125;;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> point&amp; x1, <span class="keyword">const</span> point&amp; x2)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">return</span> x1.x &lt; x2.x || x1.x == x2.x &amp;&amp; x1.y &lt; x2.y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">map</span>&lt;point, <span class="keyword">int</span>&gt; check;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">string</span> str;</span><br><span class="line">	<span class="keyword">char</span> ch = getchar();</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">		<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			ch = getchar();</span><br><span class="line">			<span class="keyword">if</span> (ch == <span class="string">'\n'</span> || ch == <span class="string">'\r'</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (!str.empty())</span><br><span class="line">					table[i].push_back(getID(str));</span><br><span class="line">				str.clear();</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (ch == <span class="string">','</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				table[i].push_back(getID(str));</span><br><span class="line">				str.clear();</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				str += ch;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//freopen("in.txt", "r", stdin);</span></span><br><span class="line">	<span class="comment">//freopen("out.txt", "w", stdout);</span></span><br><span class="line">	<span class="keyword">int</span> n, m;</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">/*for (int i = 0; i &lt; n; i++)</span></span><br><span class="line"><span class="comment">		&#123;</span></span><br><span class="line"><span class="comment">			cin.get();</span></span><br><span class="line"><span class="comment">			for (int j = 0; j &lt; m - 1; j++)</span></span><br><span class="line"><span class="comment">			&#123;</span></span><br><span class="line"><span class="comment">				string str;</span></span><br><span class="line"><span class="comment">				getline(cin, str, ',');</span></span><br><span class="line"><span class="comment">				table[i][j] = getID(str);</span></span><br><span class="line"><span class="comment">			&#125;</span></span><br><span class="line"><span class="comment">			string str;</span></span><br><span class="line"><span class="comment">			cin &gt;&gt; str;</span></span><br><span class="line"><span class="comment">			table[i][m - 1] = getID(str);</span></span><br><span class="line"><span class="comment">		&#125;*/</span></span><br><span class="line">		read(n);</span><br><span class="line">		<span class="keyword">int</span> flag = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> c1 = <span class="number">0</span>; c1 &lt; m; c1++)</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> c2 = c1 + <span class="number">1</span>; c2 &lt; m; c2++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (flag)</span><br><span class="line">				&#123;</span><br><span class="line">					check.clear();</span><br><span class="line">					<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">					&#123;</span><br><span class="line">						<span class="function">point <span class="title">x</span><span class="params">(table[i][c1], table[i][c2])</span></span>;</span><br><span class="line">						<span class="keyword">if</span> (check.count(x))</span><br><span class="line">						&#123;</span><br><span class="line">							flag = <span class="number">0</span>;</span><br><span class="line">							<span class="built_in">cout</span> &lt;&lt; <span class="string">"NO"</span> &lt;&lt; <span class="built_in">endl</span> &lt;&lt; check[x] + <span class="number">1</span> &lt;&lt; <span class="string">' '</span> &lt;&lt; i + <span class="number">1</span> &lt;&lt; <span class="built_in">endl</span> &lt;&lt; c1 + <span class="number">1</span> &lt;&lt; <span class="string">' '</span> &lt;&lt; c2 + <span class="number">1</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">							<span class="keyword">break</span>;</span><br><span class="line">						&#125;</span><br><span class="line">						check[x] = i;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		<span class="keyword">if</span> (flag)</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"YES"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="built_in">memset</span>(table, <span class="number">0</span>, <span class="keyword">sizeof</span> table);</span><br><span class="line">		ID.clear();</span><br><span class="line">		getStr.clear();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ltf.github.io/2018/02/05/database-uva1592/" data-id="cjrhlnlpa000b4gu244nr31h1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-the-setstack-computer-uva12096" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/04/the-setstack-computer-uva12096/" class="article-date">
+  <time datetime="2018-02-04T14:54:00.000Z" itemprop="datePublished">2018-02-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LTF/">LTF</a>►<a class="article-category-link" href="/categories/LTF/XLor/">XLor</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/04/the-setstack-computer-uva12096/">The Setstack Computer UVa12096</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<p>本题的思想很重要，题意中的集合概念较抽象，因此<strong>对每种集合编号</strong>。 stack为题意所描述的stack computer，存放着抽象集合对应的唯一编号，而编号所对应的集合里面也存放着集合的编号，形成了抽象集合的嵌套关系。 函数getID(set<int>)：set<int> ==&gt; 编号，通过映射ID将每个集合对应<strong>唯一</strong>编号，以此<strong>保证集合元素的互异性</strong>，接口返回编号或者分配新的编号。 向量getSet：编号 ==&gt; set<int>，通过编号找到对应set<int>，获取集合大小。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iterator&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;, <span class="keyword">int</span>&gt; ID;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;&gt; getSet;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getID</span><span class="params">(<span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (ID.count(x))</span><br><span class="line">		<span class="keyword">return</span> ID[x];</span><br><span class="line">	getSet.push_back(x);</span><br><span class="line">	<span class="keyword">return</span> ID[x] = getSet.size() - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> T;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span> (T--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; s;</span><br><span class="line">		<span class="keyword">int</span> n;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">		<span class="keyword">while</span> (n--)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">char</span> cmd[<span class="number">10</span>];</span><br><span class="line">			<span class="built_in">cin</span> &gt;&gt; cmd;</span><br><span class="line">			<span class="keyword">if</span> (cmd[<span class="number">0</span>] == <span class="string">'P'</span>)</span><br><span class="line">				s.push(getID(<span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt;()));</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (cmd[<span class="number">0</span>] == <span class="string">'D'</span>)</span><br><span class="line">				s.push(s.top());</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; x1 = getSet[s.top()];</span><br><span class="line">				s.pop();</span><br><span class="line">				<span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; x2 = getSet[s.top()];</span><br><span class="line">				s.pop();</span><br><span class="line">				<span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; x;</span><br><span class="line">				<span class="keyword">if</span> (cmd[<span class="number">0</span>] == <span class="string">'U'</span>)</span><br><span class="line">					set_union(x1.begin(), x1.end(), x2.begin(), x2.end(), inserter(x,x.begin()));</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span> (cmd[<span class="number">0</span>] == <span class="string">'I'</span>)</span><br><span class="line">					set_intersection(x1.begin(), x1.end(), x2.begin(), x2.end(), inserter(x, x.begin()));</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span> (cmd[<span class="number">0</span>] == <span class="string">'A'</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					x = x2;</span><br><span class="line">					x.insert(getID(x1));</span><br><span class="line">				&#125;</span><br><span class="line">				s.push(getID(x));</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; getSet[s.top()].size() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"***"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></int></int></int></int></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ltf.github.io/2018/02/04/the-setstack-computer-uva12096/" data-id="cjrhlnlr0002i4gu223wme0pp" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-how-to-install-sqli-labs-on-windows-10" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/04/how-to-install-sqli-labs-on-windows-10/" class="article-date">
+  <time datetime="2018-02-04T07:11:28.000Z" itemprop="datePublished">2018-02-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LTF/">LTF</a>►<a class="article-category-link" href="/categories/LTF/漏断/">漏断</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/04/how-to-install-sqli-labs-on-windows-10/">How to install sqli-labs on Windows 10</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<p>As a platform to help people learn SQL injection attack , sqli-labs provides challenges of 4 levels: basic challenges,advanced injections ,stacked injections and challenges ,which can be installed on the basis of XAMPP ,here is how:<br><!--more--></p>
+<ol>
+<li>Although I had installed XAMPP on my computer, the version of it is not supported due to a PHP function used in sqli-labs ,so i had to reinstall a XAMPP whose php version is 5.6.33.</li>
+<li>Download the compressed file from github:<a href="https://github.com/Audi-1/sqli-labs" target="_blank" rel="noopener">https://github.com/Audi-1/sqli-labs</a></li>
+<li>Unzip the file in htdocs folder</li>
+<li>Visit <a href="http://localhost/sqli-labs-master" target="_blank" rel="noopener">localhost/sqli-labs-master</a> using browser( remember to stop the proxy settings of Windows)</li>
+<li>Click Setup/reset database for labs ,if there’s no error shown on the page ,sqli-labs is successfully installed.</li>
+<li>Enjoy!</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ltf.github.io/2018/02/04/how-to-install-sqli-labs-on-windows-10/" data-id="cjrhlnlpt000r4gu243mptvyc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/environments/">environments</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-xamppdvwa-on-windows-10-installation-guide" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/02/xamppdvwa-on-windows-10-installation-guide/" class="article-date">
+  <time datetime="2018-02-02T07:28:58.000Z" itemprop="datePublished">2018-02-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LTF/">LTF</a>►<a class="article-category-link" href="/categories/LTF/漏断/">漏断</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/02/xamppdvwa-on-windows-10-installation-guide/">XAMPP+DVWA on Windows 10 installation guide</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<p>因为学习PHP时已经在电脑上安装了xampp，所以决定在此基础上安装dvwa（Damn Vulnerable Web Application靶场），结果error百出，重装了xampp四五遍才装好了dvwa，在此记录下过程。<br><!--more--></p>
+<ol>
+<li>百度下载xampp安装包，一键安装很方便。</li>
+<li>下载dvwa压缩包</li>
+<li>解压到xampp的htdocs目录（网页文件目录）</li>
+<li>按照<a href="https://www.cnblogs.com/layerlearner/archive/2016/09/13/layerlearner.html" target="_blank" rel="noopener">https://www.cnblogs.com/layerlearner/archive/2016/09/13/layerlearner.html</a>中的错误解决办法全部操作一遍。</li>
+<li>访问localhost/dvwa（解压目录），注意在系统设置中关闭所有代理选项，否则页面全部加载不出来！</li>
+<li>在安装页面createdatabase</li>
+<li>登录：默认用户admin,密码password</li>
+<li>注意修改security level，默认impossible（不可能攻破），可以在每个漏洞页面查看不同难度等级的PHP代码，也有对应的参考答案，确实很有帮助。</li>
+</ol>
+<p>总结：安装过程不复杂，但是各种配置文件、系统设置的问题容易让人找不到问题根源所在，因此比较耗费时间。每次访问页面都要关闭系统代理，比较麻烦。但是dvwa的内容很丰富，可用性很强。此外，在xampp基础上安装dvwa占用资源很少，安装完成后xampp文件夹只占半个G，相比较于虚拟机还是很有优势的。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ltf.github.io/2018/02/02/xamppdvwa-on-windows-10-installation-guide/" data-id="cjrhlnlr9002x4gu2o4q8u7dj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/environments/">environments</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Einstein-Turing/">Einstein_Turing</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/LTF/">LTF</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LTF/XLor/">XLor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/LTF/漏断/">漏断</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/LordCasser/">LordCasser</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LordCasser/LTF/">LTF</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/environments/">environments</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/">kali</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习打卡/">学习打卡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文件上传检测绕过/">文件上传检测绕过</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站渗透/">网站渗透</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/记录/">记录</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CTF/" style="font-size: 10px;">CTF</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/environments/" style="font-size: 15px;">environments</a> <a href="/tags/kali/" style="font-size: 10px;">kali</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/学习打卡/" style="font-size: 15px;">学习打卡</a> <a href="/tags/文件上传检测绕过/" style="font-size: 10px;">文件上传检测绕过</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/网站渗透/" style="font-size: 10px;">网站渗透</a> <a href="/tags/记录/" style="font-size: 10px;">记录</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/26/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/08/shell-made-of-symbols/">纯符号shell的学习</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/01/406/">Note of Unreal Engine 4</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/21/win10-e4-b8-8b-e7-9a-84linux-e5-ad-90-e7-b3-bb-e7-bb-9fkali-e7-9a-84-e5-ae-89-e8-a3-85-e5-8f-8a-e9-85-8d-e7-bd-ae/">win10下的linux子系统(kali)的安装及配置</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/13/assembly-language-end-example-the-date/">Assembly Language End Example——The Date</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 LTF<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

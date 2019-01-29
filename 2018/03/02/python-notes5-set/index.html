@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Python notes(5)-set | LTF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="set类型和dict类型一样，用list初始化（用来初始化的list中的元素要求全为不可变元素），set也是一组key的集合，但是set不能储存value。同时，由于key的不重复性，set会自动过滤掉重复的输入(再也不用担心重复字符串过滤了)。 通过add()可以添加key到set中，重复添加会被自动过滤。 通过remove(key)方法可以删除key set可以看成数学意义上的无序和无重复元">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python notes(5)-set">
+<meta property="og:url" content="https://ltf.github.io/2018/03/02/python-notes5-set/index.html">
+<meta property="og:site_name" content="LTF">
+<meta property="og:description" content="set类型和dict类型一样，用list初始化（用来初始化的list中的元素要求全为不可变元素），set也是一组key的集合，但是set不能储存value。同时，由于key的不重复性，set会自动过滤掉重复的输入(再也不用担心重复字符串过滤了)。 通过add()可以添加key到set中，重复添加会被自动过滤。 通过remove(key)方法可以删除key set可以看成数学意义上的无序和无重复元">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-29T09:54:00.021Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python notes(5)-set">
+<meta name="twitter:description" content="set类型和dict类型一样，用list初始化（用来初始化的list中的元素要求全为不可变元素），set也是一组key的集合，但是set不能储存value。同时，由于key的不重复性，set会自动过滤掉重复的输入(再也不用担心重复字符串过滤了)。 通过add()可以添加key到set中，重复添加会被自动过滤。 通过remove(key)方法可以删除key set可以看成数学意义上的无序和无重复元">
+  
+    <link rel="alternate" href="/atom.xml" title="LTF" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">LTF</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://ltf.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-python-notes5-set" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/02/python-notes5-set/" class="article-date">
+  <time datetime="2018-03-02T03:08:53.000Z" itemprop="datePublished">2018-03-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LordCasser/">LordCasser</a>►<a class="article-category-link" href="/categories/LordCasser/LTF/">LTF</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python notes(5)-set
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<p>set类型和dict类型一样，用list初始化（用来初始化的list中的元素要求全为不可变元素），set也是一组key的集合，但是set不能储存value。同时，由于key的不重复性，set会自动过滤掉重复的输入(再也不用担心重复字符串过滤了)。</p>
+<p>通过add()可以添加key到set中，重复添加会被自动过滤。</p>
+<p>通过remove(key)方法可以删除key</p>
+<p>set可以看成数学意义上的无序和无重复元素的集合，因此，两个set可以做数学意义上的交集、并集等操作（这个舒服，C++里求交集并集简直恶心）：</p>
+<pre><code>&gt;&gt;&gt; s1 = set([1, 2, 3])
+&gt;&gt;&gt; s2 = set([2, 3, 4])
+&gt;&gt;&gt; s1 &amp; s2
+{2, 3}
+&gt;&gt;&gt; s1 | s2
+{1, 2, 3, 4}
+</code></pre><p>与dict类型要求一样，key的值必须为可hash的不可变值，所以输入为二维list是行不通的</p>
+<p>tuple类型由于也是不可变对象，所以可以放入set中，如：</p>
+<pre><code>&gt;&gt;&gt; s=(1,2,3)
+&gt;&gt;&gt; text=set(s)
+&gt;&gt;&gt; text
+{1, 2, 3}
+&gt;&gt;&gt; d=(2,3,4)
+&gt;&gt;&gt; text.add(d)
+&gt;&gt;&gt; text
+{1, 2, 3, (2, 3, 4)}
+</code></pre><p>注：在tuple中放list的骚操作在set中不被允许。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ltf.github.io/2018/03/02/python-notes5-set/" data-id="cjrhlnlqc001k4gu2dwco1yz9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/03/02/python-notes6-e8-87-aa-e5-ae-9a-e4-b9-89-e5-87-bd-e6-95-b0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Python notes(6)-自定义函数
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/02/python-notes4-dict/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python notes(4)-dict</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Einstein-Turing/">Einstein_Turing</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/LTF/">LTF</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LTF/XLor/">XLor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/LTF/漏断/">漏断</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/LordCasser/">LordCasser</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LordCasser/LTF/">LTF</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/environments/">environments</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/">kali</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习打卡/">学习打卡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文件上传检测绕过/">文件上传检测绕过</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站渗透/">网站渗透</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/记录/">记录</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CTF/" style="font-size: 10px;">CTF</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/environments/" style="font-size: 15px;">environments</a> <a href="/tags/kali/" style="font-size: 10px;">kali</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/学习打卡/" style="font-size: 15px;">学习打卡</a> <a href="/tags/文件上传检测绕过/" style="font-size: 10px;">文件上传检测绕过</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/网站渗透/" style="font-size: 10px;">网站渗透</a> <a href="/tags/记录/" style="font-size: 10px;">记录</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/26/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/08/shell-made-of-symbols/">纯符号shell的学习</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/01/406/">Note of Unreal Engine 4</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/21/win10-e4-b8-8b-e7-9a-84linux-e5-ad-90-e7-b3-bb-e7-bb-9fkali-e7-9a-84-e5-ae-89-e8-a3-85-e5-8f-8a-e9-85-8d-e7-bd-ae/">win10下的linux子系统(kali)的安装及配置</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/13/assembly-language-end-example-the-date/">Assembly Language End Example——The Date</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 LTF<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

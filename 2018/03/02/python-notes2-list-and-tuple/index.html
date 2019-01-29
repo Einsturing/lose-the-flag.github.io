@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Python notes(2)-list and tuple | LTF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="listPython内置的一种数据类型是列表：list。list是一种有序的集合，可以随时添加和删除其中的元素。 比如，列出班里所有同学的名字，就可以用一个list（有点像数组又有点像链表）表示： &amp;gt;&amp;gt;&amp;gt; classmates = [&amp;apos;Michael&amp;apos;, &amp;apos;Bob&amp;apos;, &amp;apos;Tracy&amp;apos;] &amp;gt;&amp;gt;&amp;gt; cla">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python notes(2)-list and tuple">
+<meta property="og:url" content="https://ltf.github.io/2018/03/02/python-notes2-list-and-tuple/index.html">
+<meta property="og:site_name" content="LTF">
+<meta property="og:description" content="listPython内置的一种数据类型是列表：list。list是一种有序的集合，可以随时添加和删除其中的元素。 比如，列出班里所有同学的名字，就可以用一个list（有点像数组又有点像链表）表示： &amp;gt;&amp;gt;&amp;gt; classmates = [&amp;apos;Michael&amp;apos;, &amp;apos;Bob&amp;apos;, &amp;apos;Tracy&amp;apos;] &amp;gt;&amp;gt;&amp;gt; cla">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-29T09:53:49.031Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python notes(2)-list and tuple">
+<meta name="twitter:description" content="listPython内置的一种数据类型是列表：list。list是一种有序的集合，可以随时添加和删除其中的元素。 比如，列出班里所有同学的名字，就可以用一个list（有点像数组又有点像链表）表示： &amp;gt;&amp;gt;&amp;gt; classmates = [&amp;apos;Michael&amp;apos;, &amp;apos;Bob&amp;apos;, &amp;apos;Tracy&amp;apos;] &amp;gt;&amp;gt;&amp;gt; cla">
+  
+    <link rel="alternate" href="/atom.xml" title="LTF" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">LTF</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://ltf.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-python-notes2-list-and-tuple" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/02/python-notes2-list-and-tuple/" class="article-date">
+  <time datetime="2018-03-02T02:55:10.000Z" itemprop="datePublished">2018-03-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LordCasser/">LordCasser</a>►<a class="article-category-link" href="/categories/LordCasser/LTF/">LTF</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python notes(2)-list and tuple
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<h1 id="list"><a href="#list" class="headerlink" title="list"></a><strong>list</strong></h1><p>Python内置的一种数据类型是列表：list。list是一种有序的集合，可以随时添加和删除其中的元素。</p>
+<p>比如，列出班里所有同学的名字，就可以用一个list（有点像数组又有点像链表）表示：</p>
+<pre><code>&gt;&gt;&gt; classmates = [&apos;Michael&apos;, &apos;Bob&apos;, &apos;Tracy&apos;]
+&gt;&gt;&gt; classmates
+[&apos;Michael&apos;, &apos;Bob&apos;, &apos;Tracy&apos;]
+&gt;&gt;&gt; classmates[0]
+&apos;Michael&apos;
+&gt;&gt;&gt; classmates[1]
+&apos;Bob&apos;
+&gt;&gt;&gt; classmates[2]
+&apos;Tracy&apos;
+//负数表示从后往前
+&gt;&gt;&gt; classmates[-1]
+&apos;Tracy&apos;        //倒数第一个
+&gt;&gt;&gt; classmates[-2]
+&apos;Bob&apos;        //倒数第二个    
+&gt;&gt;&gt; classmates[-3]
+&apos;Michael&apos;    //倒数第三个
+</code></pre><p>越界时Python会报一个IndexError错误</p>
+<p>替换时，直接赋值给对应位置：</p>
+<pre><code>&gt;&gt;&gt; classmates[1] = &apos;Sarah&apos;
+&gt;&gt;&gt; classmates
+[&apos;Michael&apos;, &apos;Sarah&apos;, &apos;Tracy&apos;]
+</code></pre><p>用.append()追加元素到末尾:</p>
+<pre><code>&gt;&gt;&gt; classmates.append(&apos;Adam&apos;)
+&gt;&gt;&gt; classmates
+[&apos;Michael&apos;, &apos;Bob&apos;, &apos;Tracy&apos;, &apos;Adam&apos;]
+</code></pre><p>用.insert( x , y )可以把y元素插入到下标为x的位置:</p>
+<pre><code>&gt;&gt;&gt; classmates.insert(1, &apos;Jack&apos;)
+&gt;&gt;&gt; classmates
+[&apos;Michael&apos;, &apos;Jack&apos;, &apos;Bob&apos;, &apos;Tracy&apos;, &apos;Adam&apos;]
+</code></pre><p>.pop()将末尾元素删除:</p>
+<pre><code>&gt;&gt;&gt; classmates.pop()
+&apos;Adam&apos;
+&gt;&gt;&gt; classmates
+[&apos;Michael&apos;, &apos;Jack&apos;, &apos;Bob&apos;, &apos;Tracy&apos;]
+</code></pre><p>.pop(i)将指定位置的删除，其中i是下标：</p>
+<pre><code>&gt;&gt;&gt; classmates.pop(1)
+&apos;Jack&apos;
+&gt;&gt;&gt; classmates
+[&apos;Michael&apos;, &apos;Bob&apos;, &apos;Tracy&apos;]
+</code></pre><p>list里面的元素的数据类型也可以不同，比如：</p>
+<pre><code>&gt;&gt;&gt; L = [&apos;Apple&apos;, 123, True]
+</code></pre><p>ist元素也可以是另一个list，比如：</p>
+<pre><code>&gt;&gt;&gt; s = [&apos;python&apos;, &apos;java&apos;, [&apos;asp&apos;, &apos;php&apos;], &apos;scheme&apos;]
+&gt;&gt;&gt; len(s)
+4
+</code></pre><p>注意s只有4个元素，其中s[2]又是一个list</p>
+<p>拆开写:</p>
+<pre><code>&gt;&gt;&gt; p = [&apos;asp&apos;, &apos;php&apos;]
+&gt;&gt;&gt; s = [&apos;python&apos;, &apos;java&apos;, p, &apos;scheme&apos;]
+</code></pre><p>要拿到’php’可以写p[1]或者s[2][1]，因此s可以看成是一个二维数组</p>
+<h1 id="tuple"><a href="#tuple" class="headerlink" title="tuple"></a><strong>tuple</strong></h1><p>tuple类型（和list相似但是tuple中元素一旦确定便不能更改//指向不变）</p>
+<p>也就是说当定义一个tuple时，在定义的时候，tuple的元素就必须被确定下来</p>
+<p>（但是元素可以乱搞啊 -_- 反正py大法好，里面的元素可以是变量、list,还随时可以改类型）</p>
+<p>据说用tuple类型更安全</p>
+<p>要定义一个只有1个元素的tuple，如果这么定义：</p>
+<pre><code>&gt;&gt;&gt; t = (1)
+&gt;&gt;&gt; t
+1
+</code></pre><p>定义的不是tuple，是1这个数，因为括号()既可以表示tuple，又可以表示数学公式中的小括号，这就产生了歧义</p>
+<p>Python规定，这种情况下，按小括号进行计算，所以结果是1</p>
+<p>只有1个元素的tuple定义时必须加一个逗号,，来消除歧义：</p>
+<pre><code>&gt;&gt;&gt; t = (1,)
+&gt;&gt;&gt; t
+(1,)
+</code></pre><p>Python在显示只有1个元素的tuple时，也会加一个逗号</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ltf.github.io/2018/03/02/python-notes2-list-and-tuple/" data-id="cjrhlnlq7001a4gu2hu0qihab" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/03/02/python-notes3-e6-9d-a1-e4-bb-b6-e5-88-a4-e6-96-ad-e4-b8-8e-e5-be-aa-e7-8e-af/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Python notes(3)-条件判断与循环
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/02/27/zip-e4-bc-aa-e5-8a-a0-e5-af-86/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ZIP伪加密</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Einstein-Turing/">Einstein_Turing</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/LTF/">LTF</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LTF/XLor/">XLor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/LTF/漏断/">漏断</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/LordCasser/">LordCasser</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LordCasser/LTF/">LTF</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/environments/">environments</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/">kali</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习打卡/">学习打卡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文件上传检测绕过/">文件上传检测绕过</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站渗透/">网站渗透</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/记录/">记录</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CTF/" style="font-size: 10px;">CTF</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/environments/" style="font-size: 15px;">environments</a> <a href="/tags/kali/" style="font-size: 10px;">kali</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/学习打卡/" style="font-size: 15px;">学习打卡</a> <a href="/tags/文件上传检测绕过/" style="font-size: 10px;">文件上传检测绕过</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/网站渗透/" style="font-size: 10px;">网站渗透</a> <a href="/tags/记录/" style="font-size: 10px;">记录</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/26/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/08/shell-made-of-symbols/">纯符号shell的学习</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/01/406/">Note of Unreal Engine 4</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/21/win10-e4-b8-8b-e7-9a-84linux-e5-ad-90-e7-b3-bb-e7-bb-9fkali-e7-9a-84-e5-ae-89-e8-a3-85-e5-8f-8a-e9-85-8d-e7-bd-ae/">win10下的linux子系统(kali)的安装及配置</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/13/assembly-language-end-example-the-date/">Assembly Language End Example——The Date</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 LTF<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

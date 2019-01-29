@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Python notes(6)-自定义函数 | LTF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Python 中用 def定义一个函数 def 函数名 (参数1，参数2，……):     &amp;lt;语句&amp;gt;     return 如果没有return语句，函数执行完毕后也会返回结果，只是结果为None。return None可以简写为return。 造轮子：可以将自定义函数保存到py文件中 在该文件的当前目录下启动解释器 在开头用 from 文件名  import 函数名 导入自己的轮子">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python notes(6)-自定义函数">
+<meta property="og:url" content="https://ltf.github.io/2018/03/02/python-notes6-e8-87-aa-e5-ae-9a-e4-b9-89-e5-87-bd-e6-95-b0/index.html">
+<meta property="og:site_name" content="LTF">
+<meta property="og:description" content="Python 中用 def定义一个函数 def 函数名 (参数1，参数2，……):     &amp;lt;语句&amp;gt;     return 如果没有return语句，函数执行完毕后也会返回结果，只是结果为None。return None可以简写为return。 造轮子：可以将自定义函数保存到py文件中 在该文件的当前目录下启动解释器 在开头用 from 文件名  import 函数名 导入自己的轮子">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-29T09:54:09.389Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python notes(6)-自定义函数">
+<meta name="twitter:description" content="Python 中用 def定义一个函数 def 函数名 (参数1，参数2，……):     &amp;lt;语句&amp;gt;     return 如果没有return语句，函数执行完毕后也会返回结果，只是结果为None。return None可以简写为return。 造轮子：可以将自定义函数保存到py文件中 在该文件的当前目录下启动解释器 在开头用 from 文件名  import 函数名 导入自己的轮子">
+  
+    <link rel="alternate" href="/atom.xml" title="LTF" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">LTF</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://ltf.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-python-notes6-e8-87-aa-e5-ae-9a-e4-b9-89-e5-87-bd-e6-95-b0" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/02/python-notes6-e8-87-aa-e5-ae-9a-e4-b9-89-e5-87-bd-e6-95-b0/" class="article-date">
+  <time datetime="2018-03-02T03:16:37.000Z" itemprop="datePublished">2018-03-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LordCasser/">LordCasser</a>►<a class="article-category-link" href="/categories/LordCasser/LTF/">LTF</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python notes(6)-自定义函数
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<p>Python 中用 def定义一个函数</p>
+<pre><code>def 函数名 (参数1，参数2，……):
+    &lt;语句&gt;
+    return
+</code></pre><p>如果没有return语句，函数执行完毕后也会返回结果，只是结果为None。return None可以简写为return。</p>
+<h2 id="造轮子："><a href="#造轮子：" class="headerlink" title="造轮子："></a>造轮子：</h2><p>可以将自定义函数保存到py文件中 在该文件的当前目录下启动解释器 在开头用 from 文件名  import 函数名 导入自己的轮子</p>
+<h2 id="什么都不做的pass："><a href="#什么都不做的pass：" class="headerlink" title="什么都不做的pass："></a>什么都不做的pass：</h2><p>如果想在一个函数或者其他语句中（如if）什么都不做的话就可以用pass，否则代码将报错</p>
+<h2 id="自定义函数参数类型检测："><a href="#自定义函数参数类型检测：" class="headerlink" title="自定义函数参数类型检测："></a>自定义函数参数类型检测：</h2><p>用isinstance()检测 &gt;&gt;&gt;if not isinstance(x, (int, float)): …    raise TypeError(‘bad operand type’) 抛出错误</p>
+<h2 id="多值返回："><a href="#多值返回：" class="headerlink" title="多值返回："></a>多值返回：</h2><p>Python允许函数return多个值</p>
+<p>实际上Python函数返回的还是单一值（tuple）</p>
+<p>而多个变量可以接受含有同样多元素的tuple的直接赋值，例：</p>
+<pre><code>import math
+def move(x, y, step, angle=0):
+    nx = x + step * math.cos(angle)
+    ny = y - step * math.sin(angle)
+    return nx, ny
+
+&gt;&gt;&gt; x, y = move(100, 100, 60, math.pi / 6)
+&gt;&gt;&gt; print(x, y)
+151.96152422706632 70.0
+
+&gt;&gt;&gt; r = move(100, 100, 60, math.pi / 6)
+&gt;&gt;&gt; print(r)
+(151.96152422706632, 70.0)
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ltf.github.io/2018/03/02/python-notes6-e8-87-aa-e5-ae-9a-e4-b9-89-e5-87-bd-e6-95-b0/" data-id="cjrhlnlqi001r4gu2cpccpwcu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/03/02/python-notes6-e8-87-aa-e5-ae-9a-e4-b9-89-e5-87-bd-e6-95-b0-e5-87-bd-e6-95-b0-e7-9a-84-e5-8f-82-e6-95-b0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Python notes(6)-自定义函数-函数的参数
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/02/python-notes5-set/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python notes(5)-set</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Einstein-Turing/">Einstein_Turing</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/LTF/">LTF</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LTF/XLor/">XLor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/LTF/漏断/">漏断</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/LordCasser/">LordCasser</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LordCasser/LTF/">LTF</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/environments/">environments</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/">kali</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习打卡/">学习打卡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文件上传检测绕过/">文件上传检测绕过</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站渗透/">网站渗透</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/记录/">记录</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CTF/" style="font-size: 10px;">CTF</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/environments/" style="font-size: 15px;">environments</a> <a href="/tags/kali/" style="font-size: 10px;">kali</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/学习打卡/" style="font-size: 15px;">学习打卡</a> <a href="/tags/文件上传检测绕过/" style="font-size: 10px;">文件上传检测绕过</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/网站渗透/" style="font-size: 10px;">网站渗透</a> <a href="/tags/记录/" style="font-size: 10px;">记录</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/26/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/08/shell-made-of-symbols/">纯符号shell的学习</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/01/406/">Note of Unreal Engine 4</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/21/win10-e4-b8-8b-e7-9a-84linux-e5-ad-90-e7-b3-bb-e7-bb-9fkali-e7-9a-84-e5-ae-89-e8-a3-85-e5-8f-8a-e9-85-8d-e7-bd-ae/">win10下的linux子系统(kali)的安装及配置</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/13/assembly-language-end-example-the-date/">Assembly Language End Example——The Date</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 LTF<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

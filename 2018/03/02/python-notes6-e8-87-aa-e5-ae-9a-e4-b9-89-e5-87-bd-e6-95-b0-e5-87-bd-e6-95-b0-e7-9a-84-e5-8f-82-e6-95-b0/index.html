@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Python notes(6)-自定义函数-函数的参数 | LTF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Python的函数灵活度非常大。除了正常定义的必选参数外，还可以使用默认参数、可变参数和关键字参数，使得函数定义出来的接口，不但能处理复杂的参数，还可以简化调用者的代码。   默认参数：在定义时赋值，若调用函数时未给出该参数则默认使用定义时的值 注意：必选参数在前，默认参数在后。默认参数应该是一个不可变量，否则会出现使用多次调用时默认参数不撤栈造成的BUG 默认函数是自定义函数的时候定义在PyF">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python notes(6)-自定义函数-函数的参数">
+<meta property="og:url" content="https://ltf.github.io/2018/03/02/python-notes6-e8-87-aa-e5-ae-9a-e4-b9-89-e5-87-bd-e6-95-b0-e5-87-bd-e6-95-b0-e7-9a-84-e5-8f-82-e6-95-b0/index.html">
+<meta property="og:site_name" content="LTF">
+<meta property="og:description" content="Python的函数灵活度非常大。除了正常定义的必选参数外，还可以使用默认参数、可变参数和关键字参数，使得函数定义出来的接口，不但能处理复杂的参数，还可以简化调用者的代码。   默认参数：在定义时赋值，若调用函数时未给出该参数则默认使用定义时的值 注意：必选参数在前，默认参数在后。默认参数应该是一个不可变量，否则会出现使用多次调用时默认参数不撤栈造成的BUG 默认函数是自定义函数的时候定义在PyF">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-01-29T09:54:05.986Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python notes(6)-自定义函数-函数的参数">
+<meta name="twitter:description" content="Python的函数灵活度非常大。除了正常定义的必选参数外，还可以使用默认参数、可变参数和关键字参数，使得函数定义出来的接口，不但能处理复杂的参数，还可以简化调用者的代码。   默认参数：在定义时赋值，若调用函数时未给出该参数则默认使用定义时的值 注意：必选参数在前，默认参数在后。默认参数应该是一个不可变量，否则会出现使用多次调用时默认参数不撤栈造成的BUG 默认函数是自定义函数的时候定义在PyF">
+  
+    <link rel="alternate" href="/atom.xml" title="LTF" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">LTF</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://ltf.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-python-notes6-e8-87-aa-e5-ae-9a-e4-b9-89-e5-87-bd-e6-95-b0-e5-87-bd-e6-95-b0-e7-9a-84-e5-8f-82-e6-95-b0" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/02/python-notes6-e8-87-aa-e5-ae-9a-e4-b9-89-e5-87-bd-e6-95-b0-e5-87-bd-e6-95-b0-e7-9a-84-e5-8f-82-e6-95-b0/" class="article-date">
+  <time datetime="2018-03-02T03:23:30.000Z" itemprop="datePublished">2018-03-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LordCasser/">LordCasser</a>►<a class="article-category-link" href="/categories/LordCasser/LTF/">LTF</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python notes(6)-自定义函数-函数的参数
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<p>Python的函数灵活度非常大。除了正常定义的必选参数外，还可以使用默认参数、可变参数和关键字参数，使得函数定义出来的接口，不但能处理复杂的参数，还可以简化调用者的代码。  </p>
+<h2 id="默认参数："><a href="#默认参数：" class="headerlink" title="默认参数："></a>默认参数：</h2><p>在定义时赋值，若调用函数时未给出该参数则默认使用定义时的值</p>
+<h4 id="注意：必选参数在前，默认参数在后。"><a href="#注意：必选参数在前，默认参数在后。" class="headerlink" title="注意：必选参数在前，默认参数在后。"></a>注意：必选参数在前，默认参数在后。</h4><p>默认参数应该是一个不可变量，否则会出现使用多次调用时默认参数不撤栈造成的BUG 默认函数是自定义函数的时候定义在PyFunctionObject的一个元组里的，每次需要用到默认参数的时候就把他那个引用复制到调用栈的对应参数位置</p>
+<h2 id="可变参数："><a href="#可变参数：" class="headerlink" title="可变参数："></a>可变参数：</h2><p>可变参数允许传入0个或任意个参数，这些可变参数在函数调用时自动组装为一个tuple 对于需要大量输入同类型参数的函数可以用可变参数来解决，用法为在定义的参数前加上*</p>
+<pre><code>def calc(*numbers):
+    sum = 0
+    for n in numbers:
+        sum = sum + n * n
+    return sum
+&gt;&gt;&gt; calc(1, 2, 3)
+14
+&gt;&gt;&gt; calc(1, 3, 5, 7)
+84
+</code></pre><p>如果函数定义中用了可变参数后又想用已有的list或者tuple输入可以在其变量名前再加一个*</p>
+<h2 id="关键字参数："><a href="#关键字参数：" class="headerlink" title="关键字参数："></a>关键字参数：</h2><p>关键字参数允许使用者传入0个或任意个含参数名的参数，这些关键字参数在函数内部自动组装为一个dict</p>
+<p>定义关键字参数，参数名前加**</p>
+<pre><code>def person(name, age, **kw):
+    print(&apos;name:&apos;, name, &apos;age:&apos;, age, &apos;other:&apos;, kw)
+&gt;&gt;&gt; person(&apos;Michael&apos;, 30)
+name: Michael age: 30 other: {}
+</code></pre><p>也可以传入任意个数的关键字参数：</p>
+<pre><code>&gt;&gt;&gt; person(&apos;Bob&apos;, 35, city=&apos;Beijing&apos;)
+name: Bob age: 35 other: {&apos;city&apos;: &apos;Beijing&apos;}
+&gt;&gt;&gt; person(&apos;Adam&apos;, 45, gender=&apos;M&apos;, job=&apos;Engineer&apos;)
+name: Adam age: 45 other: {&apos;gender&apos;: &apos;M&apos;, &apos;job&apos;: &apos;Engineer&apos;}
+</code></pre><p>关键字参数可用于用户注册时非必要信息的录入</p>
+<p>关键字参数也可以用已经组装好的dict直接输入</p>
+<p>（此时输入的dict是原dict的一份copy，在函数中对传入的dict的改动不会影响原dict）</p>
+<h2 id="命名关键字参数："><a href="#命名关键字参数：" class="headerlink" title="命名关键字参数："></a>命名关键字参数：</h2><p>由于关键字输入的随意性，可能会导致不安全。</p>
+<p>可以使用命名关键字参数来只接受固定的关键字参数。</p>
+<p>命名关键字参数需要一个特殊分隔符<em>，</em>后面的参数被视为命名关键字参数</p>
+<pre><code>def person(name, age, *, city, job):
+    print(name, age, city, job)
+</code></pre><p>调用方式为：</p>
+<pre><code>&gt;&gt;&gt; person(&apos;Jack&apos;, 24, city=&apos;Beijing&apos;, job=&apos;Engineer&apos;)
+Jack 24 Beijing Engineer
+</code></pre><p>对于任意函数，都可以通过类似func(*args, **kw)的形式调用它，无论它的参数是如何定义的。(很迷，不太理解)</p>
+<p>*args是可变参数，args接收的是一个tuple；</p>
+<p>**kw是关键字参数，kw接收的是一个dict。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ltf.github.io/2018/03/02/python-notes6-e8-87-aa-e5-ae-9a-e4-b9-89-e5-87-bd-e6-95-b0-e5-87-bd-e6-95-b0-e7-9a-84-e5-8f-82-e6-95-b0/" data-id="cjrhlnlqe001n4gu22isw030h" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/03/02/python-notes7-python-e9-ab-98-e7-ba-a7-e7-89-b9-e6-80-a7/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Python notes(7)-Python高级特性
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/03/02/python-notes6-e8-87-aa-e5-ae-9a-e4-b9-89-e5-87-bd-e6-95-b0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Python notes(6)-自定义函数</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Einstein-Turing/">Einstein_Turing</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/LTF/">LTF</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LTF/XLor/">XLor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/LTF/漏断/">漏断</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/LordCasser/">LordCasser</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LordCasser/LTF/">LTF</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/environments/">environments</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/">kali</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习打卡/">学习打卡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文件上传检测绕过/">文件上传检测绕过</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站渗透/">网站渗透</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/记录/">记录</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CTF/" style="font-size: 10px;">CTF</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/environments/" style="font-size: 15px;">environments</a> <a href="/tags/kali/" style="font-size: 10px;">kali</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/学习打卡/" style="font-size: 15px;">学习打卡</a> <a href="/tags/文件上传检测绕过/" style="font-size: 10px;">文件上传检测绕过</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/网站渗透/" style="font-size: 10px;">网站渗透</a> <a href="/tags/记录/" style="font-size: 10px;">记录</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/26/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/08/shell-made-of-symbols/">纯符号shell的学习</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/01/406/">Note of Unreal Engine 4</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/21/win10-e4-b8-8b-e7-9a-84linux-e5-ad-90-e7-b3-bb-e7-bb-9fkali-e7-9a-84-e5-ae-89-e8-a3-85-e5-8f-8a-e9-85-8d-e7-bd-ae/">win10下的linux子系统(kali)的安装及配置</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/13/assembly-language-end-example-the-date/">Assembly Language End Example——The Date</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 LTF<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

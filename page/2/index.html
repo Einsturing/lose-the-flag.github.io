@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>LTF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="LTF">
+<meta property="og:url" content="https://ltf.github.io/page/2/index.html">
+<meta property="og:site_name" content="LTF">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LTF">
+  
+    <link rel="alternate" href="/atom.xml" title="LTF" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">LTF</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://ltf.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-python-notes5-set" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/02/python-notes5-set/" class="article-date">
+  <time datetime="2018-03-02T03:08:53.000Z" itemprop="datePublished">2018-03-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LordCasser/">LordCasser</a>►<a class="article-category-link" href="/categories/LordCasser/LTF/">LTF</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/02/python-notes5-set/">Python notes(5)-set</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<p>set类型和dict类型一样，用list初始化（用来初始化的list中的元素要求全为不可变元素），set也是一组key的集合，但是set不能储存value。同时，由于key的不重复性，set会自动过滤掉重复的输入(再也不用担心重复字符串过滤了)。</p>
+<p>通过add()可以添加key到set中，重复添加会被自动过滤。</p>
+<p>通过remove(key)方法可以删除key</p>
+<p>set可以看成数学意义上的无序和无重复元素的集合，因此，两个set可以做数学意义上的交集、并集等操作（这个舒服，C++里求交集并集简直恶心）：</p>
+<pre><code>&gt;&gt;&gt; s1 = set([1, 2, 3])
+&gt;&gt;&gt; s2 = set([2, 3, 4])
+&gt;&gt;&gt; s1 &amp; s2
+{2, 3}
+&gt;&gt;&gt; s1 | s2
+{1, 2, 3, 4}
+</code></pre><p>与dict类型要求一样，key的值必须为可hash的不可变值，所以输入为二维list是行不通的</p>
+<p>tuple类型由于也是不可变对象，所以可以放入set中，如：</p>
+<pre><code>&gt;&gt;&gt; s=(1,2,3)
+&gt;&gt;&gt; text=set(s)
+&gt;&gt;&gt; text
+{1, 2, 3}
+&gt;&gt;&gt; d=(2,3,4)
+&gt;&gt;&gt; text.add(d)
+&gt;&gt;&gt; text
+{1, 2, 3, (2, 3, 4)}
+</code></pre><p>注：在tuple中放list的骚操作在set中不被允许。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ltf.github.io/2018/03/02/python-notes5-set/" data-id="cjrhlnlqc001k4gu2dwco1yz9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-python-notes4-dict" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/02/python-notes4-dict/" class="article-date">
+  <time datetime="2018-03-02T03:06:08.000Z" itemprop="datePublished">2018-03-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LordCasser/">LordCasser</a>►<a class="article-category-link" href="/categories/LordCasser/LTF/">LTF</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/02/python-notes4-dict/">Python notes(4)-dict</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<p>Python内置了字典：dict的支持，dict全称dictionary，在其他语言中也称为map，使用键-值（key-value）存储，具有极快的查找速度</p>
+<p>先初始化(用list初始化)一个dict:</p>
+<pre><code>&gt;&gt;&gt; d = {&apos;Michael&apos;: 95, &apos;Bob&apos;: 75, &apos;Tracy&apos;: 85}
+&gt;&gt;&gt; d[&apos;Michael&apos;]
+95
+</code></pre><p>把数据放入dict的方法，除了初始化时指定外，还可以通过key放入：</p>
+<pre><code>&gt;&gt;&gt; d[&apos;Adam&apos;] = 67
+&gt;&gt;&gt; d[&apos;Adam&apos;]
+67
+</code></pre><p>一个key只能对应一个value，多次对一个key放入value等同于对其对应的value重新赋值：</p>
+<pre><code>&gt;&gt;&gt; d[&apos;Jack&apos;]
+90
+&gt;&gt;&gt; d[&apos;Jack&apos;] = 88
+&gt;&gt;&gt; d[&apos;Jack&apos;]
+88
+</code></pre><p>判断key是否存在:</p>
+<pre><code>&gt;&gt;&gt; &apos;Thomas&apos; in d
+False
+</code></pre><p>通过返回的bool值确定</p>
+<p>通过dict提供的get()方法，如果key不存在，可以返回None，或者自己指定的value：</p>
+<pre><code>&gt;&gt;&gt; d.get(&apos;Thomas&apos;)
+&gt;&gt;&gt; d.get(&apos;Thomas&apos;, -1)
+-1
+</code></pre><p>注意：返回None的时候Python的交互环境不显示结果(也就是无任何反应)。</p>
+<p>删除一个key同样用pop(key),该key所对应的value也会从dict中删除</p>
+<p>dict：</p>
+<ol>
+<li><p>查找和插入的速度极快，不会随着key的增加而变慢</p>
+</li>
+<li><p>需要占用大量的内存，内存浪费多</p>
+</li>
+</ol>
+<p>list：</p>
+<ol>
+<li><p>查找和插入的时间随着元素的增加而增加</p>
+</li>
+<li><p>占用空间小，浪费内存很少</p>
+</li>
+</ol>
+<p>dict的key必须是不可变对象。</p>
+<p>通过key计算位置的算法称为哈希算法（Hash）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ltf.github.io/2018/03/02/python-notes4-dict/" data-id="cjrhlnlqa001f4gu2nhcsnqo2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-python-notes3-e6-9d-a1-e4-bb-b6-e5-88-a4-e6-96-ad-e4-b8-8e-e5-be-aa-e7-8e-af" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/02/python-notes3-e6-9d-a1-e4-bb-b6-e5-88-a4-e6-96-ad-e4-b8-8e-e5-be-aa-e7-8e-af/" class="article-date">
+  <time datetime="2018-03-02T03:00:46.000Z" itemprop="datePublished">2018-03-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LordCasser/">LordCasser</a>►<a class="article-category-link" href="/categories/LordCasser/LTF/">LTF</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/02/python-notes3-e6-9d-a1-e4-bb-b6-e5-88-a4-e6-96-ad-e4-b8-8e-e5-be-aa-e7-8e-af/">Python notes(3)-条件判断与循环</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<p>Python中语句是否执行依靠的是缩进规则 （强制格式化  ^ _ ^   再也不用担心碰到不会缩进的同事，，等等，，事情好像并不简单，难道创造者的目的是这个？）  </p>
+<h1 id="缩进规则"><a href="#缩进规则" class="headerlink" title="缩进规则"></a>缩进规则</h1><p>缩进四个空格以表示隶属关系//标准的tab</p>
+<pre><code>if &lt;条件判断1&gt;:
+    &lt;执行1&gt;
+elif &lt;条件判断2&gt;:
+    &lt;执行2&gt;
+elif &lt;条件判断3&gt;:
+    &lt;执行3&gt;
+else:
+    &lt;执行4&gt;
+</code></pre><p>python中用input()函数输入，括号内的参数是输入提示</p>
+<p>但是input函数只能返回str类型，若是其他类型需要进行数据转换否则会报错</p>
+<h1 id="循环"><a href="#循环" class="headerlink" title="循环"></a><strong>循环</strong></h1><p>for x in …循环就是把每个元素代入变量x，然后执行缩进块的语句</p>
+<p>while循环，只要条件满足，就不断循环，条件不满足时退出循环。比如我们要计算</p>
+<p>在循环内部变量n不断自减，直到变为-1时，不再满足while条件，循环退出</p>
+<p>其他的和C++差不多</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ltf.github.io/2018/03/02/python-notes3-e6-9d-a1-e4-bb-b6-e5-88-a4-e6-96-ad-e4-b8-8e-e5-be-aa-e7-8e-af/" data-id="cjrhlnlq9001d4gu2i1pusvpm" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-python-notes2-list-and-tuple" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/02/python-notes2-list-and-tuple/" class="article-date">
+  <time datetime="2018-03-02T02:55:10.000Z" itemprop="datePublished">2018-03-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LordCasser/">LordCasser</a>►<a class="article-category-link" href="/categories/LordCasser/LTF/">LTF</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/02/python-notes2-list-and-tuple/">Python notes(2)-list and tuple</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<h1 id="list"><a href="#list" class="headerlink" title="list"></a><strong>list</strong></h1><p>Python内置的一种数据类型是列表：list。list是一种有序的集合，可以随时添加和删除其中的元素。</p>
+<p>比如，列出班里所有同学的名字，就可以用一个list（有点像数组又有点像链表）表示：</p>
+<pre><code>&gt;&gt;&gt; classmates = [&apos;Michael&apos;, &apos;Bob&apos;, &apos;Tracy&apos;]
+&gt;&gt;&gt; classmates
+[&apos;Michael&apos;, &apos;Bob&apos;, &apos;Tracy&apos;]
+&gt;&gt;&gt; classmates[0]
+&apos;Michael&apos;
+&gt;&gt;&gt; classmates[1]
+&apos;Bob&apos;
+&gt;&gt;&gt; classmates[2]
+&apos;Tracy&apos;
+//负数表示从后往前
+&gt;&gt;&gt; classmates[-1]
+&apos;Tracy&apos;        //倒数第一个
+&gt;&gt;&gt; classmates[-2]
+&apos;Bob&apos;        //倒数第二个    
+&gt;&gt;&gt; classmates[-3]
+&apos;Michael&apos;    //倒数第三个
+</code></pre><p>越界时Python会报一个IndexError错误</p>
+<p>替换时，直接赋值给对应位置：</p>
+<pre><code>&gt;&gt;&gt; classmates[1] = &apos;Sarah&apos;
+&gt;&gt;&gt; classmates
+[&apos;Michael&apos;, &apos;Sarah&apos;, &apos;Tracy&apos;]
+</code></pre><p>用.append()追加元素到末尾:</p>
+<pre><code>&gt;&gt;&gt; classmates.append(&apos;Adam&apos;)
+&gt;&gt;&gt; classmates
+[&apos;Michael&apos;, &apos;Bob&apos;, &apos;Tracy&apos;, &apos;Adam&apos;]
+</code></pre><p>用.insert( x , y )可以把y元素插入到下标为x的位置:</p>
+<pre><code>&gt;&gt;&gt; classmates.insert(1, &apos;Jack&apos;)
+&gt;&gt;&gt; classmates
+[&apos;Michael&apos;, &apos;Jack&apos;, &apos;Bob&apos;, &apos;Tracy&apos;, &apos;Adam&apos;]
+</code></pre><p>.pop()将末尾元素删除:</p>
+<pre><code>&gt;&gt;&gt; classmates.pop()
+&apos;Adam&apos;
+&gt;&gt;&gt; classmates
+[&apos;Michael&apos;, &apos;Jack&apos;, &apos;Bob&apos;, &apos;Tracy&apos;]
+</code></pre><p>.pop(i)将指定位置的删除，其中i是下标：</p>
+<pre><code>&gt;&gt;&gt; classmates.pop(1)
+&apos;Jack&apos;
+&gt;&gt;&gt; classmates
+[&apos;Michael&apos;, &apos;Bob&apos;, &apos;Tracy&apos;]
+</code></pre><p>list里面的元素的数据类型也可以不同，比如：</p>
+<pre><code>&gt;&gt;&gt; L = [&apos;Apple&apos;, 123, True]
+</code></pre><p>ist元素也可以是另一个list，比如：</p>
+<pre><code>&gt;&gt;&gt; s = [&apos;python&apos;, &apos;java&apos;, [&apos;asp&apos;, &apos;php&apos;], &apos;scheme&apos;]
+&gt;&gt;&gt; len(s)
+4
+</code></pre><p>注意s只有4个元素，其中s[2]又是一个list</p>
+<p>拆开写:</p>
+<pre><code>&gt;&gt;&gt; p = [&apos;asp&apos;, &apos;php&apos;]
+&gt;&gt;&gt; s = [&apos;python&apos;, &apos;java&apos;, p, &apos;scheme&apos;]
+</code></pre><p>要拿到’php’可以写p[1]或者s[2][1]，因此s可以看成是一个二维数组</p>
+<h1 id="tuple"><a href="#tuple" class="headerlink" title="tuple"></a><strong>tuple</strong></h1><p>tuple类型（和list相似但是tuple中元素一旦确定便不能更改//指向不变）</p>
+<p>也就是说当定义一个tuple时，在定义的时候，tuple的元素就必须被确定下来</p>
+<p>（但是元素可以乱搞啊 -_- 反正py大法好，里面的元素可以是变量、list,还随时可以改类型）</p>
+<p>据说用tuple类型更安全</p>
+<p>要定义一个只有1个元素的tuple，如果这么定义：</p>
+<pre><code>&gt;&gt;&gt; t = (1)
+&gt;&gt;&gt; t
+1
+</code></pre><p>定义的不是tuple，是1这个数，因为括号()既可以表示tuple，又可以表示数学公式中的小括号，这就产生了歧义</p>
+<p>Python规定，这种情况下，按小括号进行计算，所以结果是1</p>
+<p>只有1个元素的tuple定义时必须加一个逗号,，来消除歧义：</p>
+<pre><code>&gt;&gt;&gt; t = (1,)
+&gt;&gt;&gt; t
+(1,)
+</code></pre><p>Python在显示只有1个元素的tuple时，也会加一个逗号</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ltf.github.io/2018/03/02/python-notes2-list-and-tuple/" data-id="cjrhlnlq7001a4gu2hu0qihab" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-zip-e4-bc-aa-e5-8a-a0-e5-af-86" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/27/zip-e4-bc-aa-e5-8a-a0-e5-af-86/" class="article-date">
+  <time datetime="2018-02-27T04:42:47.000Z" itemprop="datePublished">2018-02-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LTF/">LTF</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/27/zip-e4-bc-aa-e5-8a-a0-e5-af-86/">ZIP伪加密</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<p>特征，打开后里面文件带*号<img src="http://blog.ltfnjust.club/wp-content/uploads/2018/02/TIM图片20180227123212-300x72.png" alt=""> 然而爆破不出密码（一般遇到这种还是不要上来就爆破的好） 50 4B 03 04是文件头标记 14 00 解压所需的pkware（并不知道是什么） 00 00(全局方式位标记）其中09 00 就是加密了的标志 如果一个未加密的通过修改加密标志就可以实现怎么也解不开的密码 如09 00就是加密了的，四个数字中只有第二个数字对其有影响。 p.s. 要改要改一对，改一个是没用的（别问我怎么知道）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ltf.github.io/2018/02/27/zip-e4-bc-aa-e5-8a-a0-e5-af-86/" data-id="cjrhlnlri00354gu2euinu49u" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-python-notes1-string-and-encoding-2" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/11/python-notes1-string-and-encoding-2/" class="article-date">
+  <time datetime="2018-02-11T07:09:40.000Z" itemprop="datePublished">2018-02-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LordCasser/">LordCasser</a>►<a class="article-category-link" href="/categories/LordCasser/LTF/">LTF</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/11/python-notes1-string-and-encoding-2/">Python notes(1)-string and encoding</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<p>转义字符\（用法和C++差不多） 如果字符串里面有很多字符都需要转义，就需要加很多\，为了简化，Python还允许用r’’表示’’内部的字符串默认不转义</p>
+<pre><code>&gt;&gt;&gt; print(r&apos;\\\t\\&apos;)
+\\\t\\
+</code></pre><p>Python变量命名法与C++一致，区分大小写 在Python中，等号=是赋值语句，可以把任意数据类型赋值给变量，同一个变量可以反复赋值，而且可以是不同类型的变量 （这种变量本身类型不固定的语言称之为动态语言，与之对应的是静态语言。静态语言在定义变量时必须指定变量类型，如果赋值的时候类型不匹配，就会报错） 当我们写：</p>
+<pre><code>a = &apos;ABC&apos;
+</code></pre><p>Python解释器 在内存中创建了一个’ABC’的字符串 在内存中创建了一个名为a的变量（指针？），并把它指向’ABC’。 （这就是可以随便乱赋值的原因吗）   空值是Python里一个特殊的值，用None表示。None不能理解为0，因为0是有意义的，而None是一个特殊的空值。（和C++一致）   在Python中，通常用全部大写的变量名表示常量：</p>
+<pre><code>PI = 3.14159265359
+</code></pre><p>  /除法计算结果是浮点数，即使是两个整数恰好整除，结果也是浮点数：</p>
+<pre><code>&gt;&gt;&gt; 9 / 3
+3.0
+</code></pre><p>还有一种除法是//，称为地板除，两个整数的除法仍然是整数：</p>
+<pre><code>&gt;&gt;&gt; 10 // 3
+3
+</code></pre><p>%用法在计算中与C++一致   Python的整数没有大小限制，而某些语言的整数根据其存储长度是有大小限制的 Python的浮点数也没有大小限制，但是超出一定范围就直接表示为inf（无限大）   对于单个字符的编码，Python提供了ord()函数获取字符的整数表示，chr()函数把编码转换为对应的字符 注意区分’ABC’和b’ABC’，前者是str，后者虽然内容显示得和前者一样，但bytes的每个字符都只占用一个字节。 以Unicode表示的str通过encode()方法可以编码为指定的bytes</p>
+<pre><code>&gt;&gt;&gt; &apos;ABC&apos;.encode(&apos;ascii&apos;)
+b&apos;ABC&apos;
+&gt;&gt;&gt; &apos;中文&apos;.encode(&apos;utf-8&apos;)
+b&apos;\xe4\xb8\xad\xe6\x96\x87&apos;
+</code></pre><p>  要计算str包含多少个字符，可以用len()函数 如果是bytes, len()函数计算的是字节数   在操作字符串时，我们经常遇到str和bytes的互相转换。为了避免乱码问题，应当始终坚持使用UTF-8编码对str和bytes进行转换。 由于Python源代码也是一个文本文件，所以，当你的源代码中包含中文的时候，在保存源代码时，就需要务必指定保存为UTF-8编码。当Python解释器读取源代码时，为了让它按UTF-8编码读取，我们通常在文件开头写上这两行：</p>
+<pre><code>#!/usr/bin/env python3    //为了告诉Linux/OS X系统，这是一个Python可执行程序，Windows系统会忽略这个注释
+# -*- coding: utf-8 -*-    //第二行注释是为了告诉Python解释器，按照UTF-8编码读取源代码，否则在源代码中写的中文输出可能会有乱码
+</code></pre><p>  %用来格式化输出的字符串 占位符 替换内容 %d 整数 %f 浮点数 %s 字符串 %x 十六进制整数 其中%_d表示占_位(<em>表示填入的数)(当</em>为0开头的数表示用0代替空格填充) 为浮点数时%._f表示小数点后保留_位（小数点前与%d一致） 如果不确定应该用什么，用%s把任何数据类型转换为字符串 字符串中有%时，用%%将其转义（此时\转义无效）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ltf.github.io/2018/02/11/python-notes1-string-and-encoding-2/" data-id="cjrhlnlq500174gu234t9dxf8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-broken-keyboard-uva11988" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/10/broken-keyboard-uva11988/" class="article-date">
+  <time datetime="2018-02-10T13:39:32.000Z" itemprop="datePublished">2018-02-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LTF/">LTF</a>►<a class="article-category-link" href="/categories/LTF/XLor/">XLor</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/10/broken-keyboard-uva11988/">Broken Keyboard UVa11988</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<p>本题关键为链表的数组实现，用nxt数组模拟txt中元素之间的指向关系。 构造nxt数组时，头元素指向尾0，遍历txt并将元素的指向关系插入到nxt中。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> nxt[<span class="number">100005</span>];</span><br><span class="line"><span class="keyword">char</span> txt[<span class="number">100005</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; txt + <span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">1</span>, len =  <span class="built_in">strlen</span>(txt + <span class="number">1</span>), last = <span class="number">0</span>, ans = <span class="number">0</span>;</span><br><span class="line">		nxt[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">while</span> (i &lt;= len)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (txt[i] == <span class="string">'['</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				ans = <span class="number">0</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (txt[i] == <span class="string">']'</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				ans = last;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				nxt[i] = nxt[ans];</span><br><span class="line">				nxt[ans] = i;</span><br><span class="line">				<span class="keyword">if</span> (ans == last)</span><br><span class="line">					last = i;</span><br><span class="line">				ans = i;</span><br><span class="line">			&#125;</span><br><span class="line">			i++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = nxt[<span class="number">0</span>]; i; i = nxt[i])</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; txt[i];</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ltf.github.io/2018/02/10/broken-keyboard-uva11988/" data-id="cjrhlnlp200074gu2645pyel6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-matrix-chain-multiplication-uva442" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/10/matrix-chain-multiplication-uva442/" class="article-date">
+  <time datetime="2018-02-10T10:31:20.000Z" itemprop="datePublished">2018-02-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LTF/">LTF</a>►<a class="article-category-link" href="/categories/LTF/XLor/">XLor</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/10/matrix-chain-multiplication-uva442/">Matrix Chain Multiplication UVa442</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<p>Times: 23 mins 栈在表达式计算的应用，参考数据结构课程。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;utility&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> p pair<span class="meta-string">&lt;int, int&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">p x[<span class="number">30</span>];</span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">solve</span><span class="params">(<span class="built_in">string</span>&amp; <span class="built_in">exp</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">stack</span>&lt;p&gt; cal;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> tot = <span class="number">0</span>, sum = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">exp</span>.length() == <span class="number">1</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (tot &lt; <span class="built_in">exp</span>.length())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">exp</span>[tot] == <span class="string">')'</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			p x2 = cal.top(); cal.pop();</span><br><span class="line">			p x1 = cal.top(); cal.pop();</span><br><span class="line">			<span class="keyword">if</span> (x1.second != x2.first)</span><br><span class="line">				<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				sum += x1.first * x1.second * x2.second;</span><br><span class="line">			cal.push(make_pair(x1.first, x2.second));</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">exp</span>[tot] != <span class="string">'('</span>)</span><br><span class="line">			cal.push(x[<span class="built_in">exp</span>[tot] - <span class="string">'A'</span>]);</span><br><span class="line">		tot++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> N;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">char</span> xx;</span><br><span class="line">		<span class="keyword">int</span> r, c;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; xx &gt;&gt; r &gt;&gt; c;</span><br><span class="line">		x[xx - <span class="string">'A'</span>] = make_pair(r, c);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">string</span> <span class="built_in">exp</span>;</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; <span class="built_in">exp</span>) </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> res = solve(<span class="built_in">exp</span>);</span><br><span class="line">		<span class="keyword">if</span> (res != <span class="number">-1</span>)</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; res;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"error"</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ltf.github.io/2018/02/10/matrix-chain-multiplication-uva442/" data-id="cjrhlnlpv000u4gu2t7uqk0da" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-rails-uva514" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/10/rails-uva514/" class="article-date">
+  <time datetime="2018-02-10T09:52:03.000Z" itemprop="datePublished">2018-02-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LTF/">LTF</a>►<a class="article-category-link" href="/categories/LTF/XLor/">XLor</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/10/rails-uva514/">Rails UVa514</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<p>TImes: 17 mins. 栈混洗模板，模拟混洗过程秒。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; A, C;</span><br><span class="line"><span class="keyword">int</span> res[<span class="number">1005</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">clear</span><span class="params">(<span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; &amp;x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span> (!x.empty())</span><br><span class="line">		x.pop();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span> N)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> tot = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (!A.empty())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (!C.empty() &amp;&amp; C.top() == res[tot])</span><br><span class="line">		&#123;</span><br><span class="line">			C.pop();</span><br><span class="line">			tot++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			C.push(A.top());</span><br><span class="line">			A.pop();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span> (!C.empty())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (C.top() != res[tot])</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		C.pop();</span><br><span class="line">		tot++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> N;</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; N &amp;&amp; N)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; res[<span class="number">1</span>] &amp;&amp; res[<span class="number">1</span>])</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= N; i++)</span><br><span class="line">				<span class="built_in">cin</span> &gt;&gt; res[i];</span><br><span class="line">			clear(A); clear(C);</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = N; i &gt; <span class="number">0</span>; i--)</span><br><span class="line">				A.push(i);</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; (solve(N) ? <span class="string">"Yes"</span> :<span class="string">"No"</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ltf.github.io/2018/02/10/rails-uva514/" data-id="cjrhlnlqm001y4gu2nov2ywbb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-concurrency-simulator-uva210" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/09/concurrency-simulator-uva210/" class="article-date">
+  <time datetime="2018-02-09T14:33:30.000Z" itemprop="datePublished">2018-02-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LTF/">LTF</a>►<a class="article-category-link" href="/categories/LTF/XLor/">XLor</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/09/concurrency-simulator-uva210/">Concurrency Simulator UVa210</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<p>Times： 2 hrs. 很好的一道STL题，本题核心练习了queue和deque的运用。 首先，本题的输入就比较麻烦，带空格，选用cin.getline()读取整行，使用string流读取了操作数。储存方式最终选择用了两个向量，一个储存指令类型，一个储存指令对应的操作数（无操作数用-1填充），这两个向量都是从1开始储存，第0位保存当前并行程序运行位置（类似于IP寄存器）。 过程模拟上没有太多问题，主要注意对<strong>quantum</strong>、<strong>lock</strong>和<strong>unlock</strong>含义。quantum决定一个程序最多执行的操作数量，lock会阻止其他并行程序的lock，并挂起到等待queue，直到unlock，恢复等待queue挂起的<strong>第一个程序</strong>。<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;deque&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> var[<span class="number">26</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"><span class="built_in">deque</span>&lt;<span class="keyword">int</span>&gt; exc, wait;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; opc, opd;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//freopen("in.txt", "r", stdin);</span></span><br><span class="line">	<span class="comment">//freopen("out.txt", "w", stdout);</span></span><br><span class="line">	<span class="keyword">int</span> T, kase = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span> (T--)</span><br><span class="line">	&#123;</span><br><span class="line">		opc.clear(); opd.clear(); wait.clear();  <span class="built_in">memset</span>(var, <span class="number">0</span>, <span class="keyword">sizeof</span> var);</span><br><span class="line">		<span class="keyword">int</span> n, time[<span class="number">5</span>], q, cnt = <span class="number">0</span>;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; time[<span class="number">0</span>] &gt;&gt; time[<span class="number">1</span>] &gt;&gt; time[<span class="number">2</span>] &gt;&gt; time[<span class="number">3</span>] &gt;&gt; time[<span class="number">4</span>] &gt;&gt; q;</span><br><span class="line">		opc.resize(n); opd.resize(n);</span><br><span class="line">		opc[<span class="number">0</span>].push_back(<span class="number">1</span>);</span><br><span class="line">		opd[<span class="number">0</span>].push_back(<span class="number">-1</span>);</span><br><span class="line">		<span class="built_in">cin</span>.ignore();</span><br><span class="line">		<span class="keyword">while</span> (cnt &lt; n)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">char</span> cmd[<span class="number">20</span>];</span><br><span class="line">			<span class="keyword">char</span> x;</span><br><span class="line">			<span class="built_in">cin</span>.getline(cmd, <span class="number">20</span>);</span><br><span class="line">			<span class="keyword">if</span> (cmd[<span class="number">0</span>] == <span class="string">'p'</span> &amp;&amp; cmd[<span class="number">1</span>] == <span class="string">'r'</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				opc[cnt].push_back(<span class="number">1</span>);</span><br><span class="line">				opd[cnt].push_back(cmd[<span class="number">6</span>] - <span class="string">'a'</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (cmd[<span class="number">0</span>] == <span class="string">'l'</span> &amp;&amp; cmd[<span class="number">1</span>] == <span class="string">'o'</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				opc[cnt].push_back(<span class="number">2</span>);</span><br><span class="line">				opd[cnt].push_back(<span class="number">-1</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (cmd[<span class="number">0</span>] == <span class="string">'u'</span> &amp;&amp; cmd[<span class="number">1</span>] == <span class="string">'n'</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				opc[cnt].push_back(<span class="number">3</span>);</span><br><span class="line">				opd[cnt].push_back(<span class="number">-1</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span> (cmd[<span class="number">0</span>] == <span class="string">'e'</span> &amp;&amp; cmd[<span class="number">1</span>] == <span class="string">'n'</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				opc[cnt].push_back(<span class="number">4</span>);</span><br><span class="line">				opd[cnt].push_back(<span class="number">-1</span>);</span><br><span class="line">				exc.push_back(cnt);</span><br><span class="line">				cnt++;</span><br><span class="line">				<span class="keyword">if</span> (cnt &lt; n)</span><br><span class="line">				&#123;</span><br><span class="line">					opc[cnt].push_back(<span class="number">1</span>);</span><br><span class="line">					opd[cnt].push_back(<span class="number">-1</span>);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">stringstream</span> ss(cmd + <span class="number">3</span>);</span><br><span class="line">				<span class="keyword">int</span> xx;</span><br><span class="line">				opc[cnt].push_back(cmd[<span class="number">0</span>] - <span class="string">'a'</span> + <span class="number">5</span>);</span><br><span class="line">				ss &gt;&gt; xx;</span><br><span class="line">				opd[cnt].push_back(xx);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> lock = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span> (kase++) <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">while</span> (!exc.empty())</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> prom = exc.front(), tot = opc[prom][<span class="number">0</span>], sum = <span class="number">0</span>, flag = <span class="number">1</span>;</span><br><span class="line">			exc.pop_front();</span><br><span class="line">			<span class="keyword">while</span> (sum &lt; q)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="comment">//cout &lt;&lt; opc[prom][tot] &lt;&lt; endl;</span></span><br><span class="line">				<span class="keyword">if</span> (opc[prom][tot] &gt;= <span class="number">5</span>)</span><br><span class="line">					var[opc[prom][tot] - <span class="number">5</span>] = opd[prom][tot], sum += time[<span class="number">0</span>];</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span> (opc[prom][tot] == <span class="number">1</span>)</span><br><span class="line">					<span class="built_in">cout</span> &lt;&lt; prom + <span class="number">1</span> &lt;&lt; <span class="string">": "</span> &lt;&lt; var[opd[prom][tot]] &lt;&lt; <span class="built_in">endl</span>, sum += time[<span class="number">1</span>];</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span> (opc[prom][tot] == <span class="number">2</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">if</span> (!lock)</span><br><span class="line">						lock = <span class="number">1</span>;</span><br><span class="line">					<span class="keyword">else</span></span><br><span class="line">						wait.push_back(prom), flag = <span class="number">0</span>, sum = q + <span class="number">1</span>;</span><br><span class="line">					sum += time[<span class="number">2</span>];</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span> (opc[prom][tot] == <span class="number">3</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					lock = <span class="number">0</span>, sum += time[<span class="number">3</span>];</span><br><span class="line">					<span class="keyword">if</span> (!wait.empty())</span><br><span class="line">					&#123;</span><br><span class="line">						exc.push_front(wait.front());</span><br><span class="line">						wait.pop_front();</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">					sum = q + <span class="number">1</span>, flag = <span class="number">0</span>;</span><br><span class="line">				<span class="keyword">if</span> (flag)</span><br><span class="line">					tot++;</span><br><span class="line">			&#125;</span><br><span class="line">			opc[prom][<span class="number">0</span>] = tot;</span><br><span class="line">			<span class="keyword">if</span> (flag)</span><br><span class="line">				exc.push_back(prom);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ltf.github.io/2018/02/09/concurrency-simulator-uva210/" data-id="cjrhlnlp500084gu24fjegtv2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Einstein-Turing/">Einstein_Turing</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/LTF/">LTF</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LTF/XLor/">XLor</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/LTF/漏断/">漏断</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/LordCasser/">LordCasser</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/LordCasser/LTF/">LTF</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CTF/">CTF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/environments/">environments</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/kali/">kali</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习打卡/">学习打卡</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/文件上传检测绕过/">文件上传检测绕过</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站渗透/">网站渗透</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/记录/">记录</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CTF/" style="font-size: 10px;">CTF</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Python/" style="font-size: 20px;">Python</a> <a href="/tags/environments/" style="font-size: 15px;">environments</a> <a href="/tags/kali/" style="font-size: 10px;">kali</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/学习打卡/" style="font-size: 15px;">学习打卡</a> <a href="/tags/文件上传检测绕过/" style="font-size: 10px;">文件上传检测绕过</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/网站渗透/" style="font-size: 10px;">网站渗透</a> <a href="/tags/记录/" style="font-size: 10px;">记录</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/26/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/08/08/shell-made-of-symbols/">纯符号shell的学习</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/01/406/">Note of Unreal Engine 4</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/21/win10-e4-b8-8b-e7-9a-84linux-e5-ad-90-e7-b3-bb-e7-bb-9fkali-e7-9a-84-e5-ae-89-e8-a3-85-e5-8f-8a-e9-85-8d-e7-bd-ae/">win10下的linux子系统(kali)的安装及配置</a>
+          </li>
+        
+          <li>
+            <a href="/2018/05/13/assembly-language-end-example-the-date/">Assembly Language End Example——The Date</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 LTF<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
